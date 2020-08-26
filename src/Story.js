@@ -1,11 +1,23 @@
 import React, { Component } from 'react';
+import { Remarkable } from 'remarkable';
 import './Story.css';
 
 class Story extends Component {
+  constructor(props) {
+    super(props);
+    this.remarkable = new Remarkable();
+  }
+
+  narrativeHtml() {
+    return { __html: this.remarkable.render(this.props.narrative) }
+  }
 
   render() {
     return (
-      <h1>{this.props.title}</h1>
+      <div class='story'>
+        <h1>{this.props.title}</h1>
+        <div class="narrative" dangerouslySetInnerHTML={this.narrativeHtml()} />
+      </div>
     );
   }
 }

@@ -23,7 +23,7 @@ class App extends Component {
 
   render() {
     const stories = this.state.stories.map((s) => 
-      <div key={s.get('id')}><Story title={s.get('title')} /></div>
+      <div key={s.get('id')}><Story title={s.get('title')} narrative={s.get('narrative')} /></div>
     );
     return (
       <SwipeableViews>

@@ -11,7 +11,8 @@
     "react-dom": "^16.13.1",
     "react-leaflet": "^2.6.3",
     "react-scripts": "3.4.1",
-    "react-swipeable-views": "^0.13.9"
+    "react-swipeable-views": "^0.13.9",
+    "remarkable": "^2.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
