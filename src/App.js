@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SwipeableViews from 'react-swipeable-views';
 import Story from './Story.js'
 import './App.css';
 
@@ -22,12 +23,12 @@ class App extends Component {
 
   render() {
     const stories = this.state.stories.map((s) => 
-      <Story key={s.get('id')} title={s.get('title')} />
+      <div key={s.get('id')}><Story title={s.get('title')} /></div>
     );
     return (
-      <ul>
+      <SwipeableViews>
         {stories}
-      </ul>
+      </SwipeableViews>
     );
   }
 }
