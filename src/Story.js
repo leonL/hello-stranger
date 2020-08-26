@@ -15,7 +15,7 @@ class Story extends Component {
   render() {
     return (
       <div class='story'>
-        <h1>{this.props.title}</h1>
+        <h1 class='title'>{this.props.title}</h1>
         <div class="narrative" dangerouslySetInnerHTML={this.narrativeHtml()} />
       </div>
     );
