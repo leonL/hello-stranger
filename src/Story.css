@@ -11,3 +11,9 @@ div.narrative p {
   text-indent: 1.5em;
   font-family: 'Times New Roman', Times, serif;
 }
+
+blockquote.epigraph p {
+  padding: 15px;
+  background: #eee;
+  border-radius: 5px;
+}

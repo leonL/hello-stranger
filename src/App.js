@@ -27,13 +27,23 @@ class App extends Component {
     this.setState({browserWindowHeight: window.innerHeight})
   }
 
-  render() {
+  storiesHtml = () => {
     const stories = this.state.stories.map((s) => 
-      <div key={s.get('id')}><Story title={s.get('title')} narrative={s.get('narrative')} /></div>
-    );
+      <div key={s.get('id')}>
+        <Story 
+          title={s.get('title')} 
+          epigraph={s.get('epigraph')} 
+          stranger_id={s.get('stranger_id')} 
+          narrative={s.get('narrative')} />
+      </div>
+    )
+    return stories;
+  }
+
+  render() {
     return (
       <SwipeableViews containerStyle={{height: this.state.browserWindowHeight}}>
-        {stories}
+        {this.storiesHtml()}
       </SwipeableViews>
     );
   }

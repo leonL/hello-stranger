@@ -14,9 +14,13 @@ class Story extends Component {
 
   render() {
     return (
-      <div class='story'>
-        <h1 class='title'>{this.props.title}</h1>
-        <div class="narrative" dangerouslySetInnerHTML={this.narrativeHtml()} />
+      <div className='story'>
+        <h1 className='title'>{this.props.title}</h1>
+        <blockquote className="epigraph">
+          <p>{this.props.epigraph}</p>
+          <footer>- from <cite>Stranger Memory #{this.props.stranger_id}</cite></footer>
+        </blockquote>
+        <div className="narrative" dangerouslySetInnerHTML={this.narrativeHtml()} />
       </div>
     );
   }
