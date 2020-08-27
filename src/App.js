@@ -10,7 +10,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      stories: []
+      stories: [],
+      browserWindowHeight: window.innerHeight
     };
   }
 
@@ -19,6 +20,11 @@ class App extends Component {
       if (err) { console.error(err); return;  } 
       this.setState({ stories: records });
     });
+    window.addEventListener('resize', this.onBrowserWindowResize);
+  }
+
+  onBrowserWindowResize = (e) => {
+    this.setState({browserWindowHeight: window.innerHeight})
   }
 
   render() {
@@ -26,7 +32,7 @@ class App extends Component {
       <div key={s.get('id')}><Story title={s.get('title')} narrative={s.get('narrative')} /></div>
     );
     return (
-      <SwipeableViews>
+      <SwipeableViews containerStyle={{height: this.state.browserWindowHeight}}>
         {stories}
       </SwipeableViews>
     );
