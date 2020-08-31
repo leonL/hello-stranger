@@ -11,7 +11,7 @@ class App extends Component {
     super(props);
     this.state = {
       stories: [],
-      browserWindowHeight: window.innerHeight
+      browserWindowHeight: window.innerHeight - 50
     };
   }
 
@@ -24,7 +24,7 @@ class App extends Component {
   }
 
   onBrowserWindowResize = (e) => {
-    this.setState({browserWindowHeight: window.innerHeight})
+    this.setState({browserWindowHeight: window.innerHeight - 50})
   }
 
   storiesHtml = () => {
@@ -43,9 +43,14 @@ class App extends Component {
 
   render() {
     return (
-      <SwipeableViews containerStyle={{height: this.state.browserWindowHeight}}>
-        {this.storiesHtml()}
-      </SwipeableViews>
+      <div>
+        <SwipeableViews containerStyle={{height: this.state.browserWindowHeight}}>
+          {this.storiesHtml()}
+        </SwipeableViews>
+        <div className='footer'>
+          <h4 className='title'>helloStranger : Stories in view of the hidden</h4>
+        </div>
+      </div>
     );
   }
 }
