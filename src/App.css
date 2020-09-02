@@ -4,12 +4,13 @@
   left: 0;
   right: 0;
   height: 50px;
-  background: rgba(0, 0, 0, 0.8);
-  border-top: 2px solid #ccc;
+  background: #AAD6A0;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.5);
   text-align: center;
 }
 
 .footer .title {
-  color: rgba(255, 255, 255, 0.7);
-  margin: 15px 0 0;
+  color: rgba(0, 0, 0, 1);
+  margin: 2px 0 0;
+  font-family: 'Rock Salt', sans-serif;
 }

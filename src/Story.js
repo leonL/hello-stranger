@@ -16,20 +16,21 @@ class Story extends Component {
   render() {
     return (
       <div className='story'>
-        <h1 className='title'>{this.props.title}</h1>
+        <MapVignette coordinates={this.props.geo_coordinates} />
         <blockquote className="epigraph">
-          <MapVignette coordinates={this.props.geo_coordinates} />
           <p>{this.props.epigraph}</p>
           <footer>- <cite> Stranger no. {this.props.stranger_id}</cite></footer>
         </blockquote>
+        <h1 className='title'>{this.props.title}</h1>
         <div className="narrative" dangerouslySetInnerHTML={this.narrativeHtml()} />
-        <div className="solicitation">
-          helloStranger stories take encounters between strangers as a starting point. 
+        <MapVignette coordinates={this.props.geo_coordinates} />
+        <blockquote className="solicitation">
+          <p>helloStranger stories take encounters between strangers as a starting point. 
           If you like this project please take a moment to&nbsp;
           <a href="https://airtable.com/shrhBkljBMeLUa4wR" target="_blank" rel="noopener noreferrer">
             remember a stranger
-          </a>.
-        </div>
+          </a>.</p>
+        </blockquote>
       </div>
     );
   }

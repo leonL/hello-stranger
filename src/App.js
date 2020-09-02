@@ -48,7 +48,7 @@ class App extends Component {
           {this.storiesHtml()}
         </SwipeableViews>
         <div className='footer'>
-          <h4 className='title'>helloStranger : Stories in view of the hidden</h4>
+          <h3 className='title'>helloStranger</h3>
         </div>
       </div>
     );
