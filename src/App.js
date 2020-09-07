@@ -33,7 +33,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         {this.state.stories.length > 0 &&
           this.story()
         }

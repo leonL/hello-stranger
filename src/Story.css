@@ -1,5 +1,5 @@
 .story {
-  height: 92vh;
+  grid-row-start: 1;
   overflow-y: scroll;
 }
 
