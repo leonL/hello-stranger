@@ -1,9 +1,13 @@
+html, body {
+  height: 100%;
+}
+
 .footer {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 50px;
+  height: 8vh;
   background: #AAD6A0;
   box-shadow: 0px 3px 10px rgba(0,0,0,0.5);
   text-align: center;

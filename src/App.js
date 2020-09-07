@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import SwipeableViews from 'react-swipeable-views';
 import Story from './Story.js'
 import './App.css';
 
@@ -10,8 +9,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      stories: [],
-      browserWindowHeight: window.innerHeight - 50
+      stories: []
     };
   }
 
@@ -23,30 +21,22 @@ class App extends Component {
     window.addEventListener('resize', this.onBrowserWindowResize);
   }
 
-  onBrowserWindowResize = (e) => {
-    this.setState({browserWindowHeight: window.innerHeight - 50})
-  }
-
-  storiesHtml = () => {
-    const stories = this.state.stories.map((s) => 
-      <div key={s.get('id')}>
-        <Story 
-          title={s.get('title')} 
-          epigraph={s.get('epigraph')} 
-          geo_coordinates={ [s.get('latitude')[0], s.get('longitude')[0]] } 
-          stranger_id={s.get('stranger_id')} 
-          narrative={s.get('narrative')} />
-      </div>
-    )
-    return stories;
+  story = () => {
+    const s = this.state.stories[0]
+    return <Story 
+      title={s.get('title')} 
+      epigraph={s.get('epigraph')} 
+      geo_coordinates={ [s.get('latitude')[0], s.get('longitude')[0]] } 
+      stranger_id={s.get('stranger_id')} 
+      narrative={s.get('narrative')} />    
   }
 
   render() {
     return (
       <div>
-        <SwipeableViews containerStyle={{height: this.state.browserWindowHeight}}>
-          {this.storiesHtml()}
-        </SwipeableViews>
+        {this.state.stories.length > 0 &&
+          this.story()
+        }
         <div className='footer'>
           <h3 className='title'>helloStranger</h3>
         </div>
