@@ -10,20 +10,22 @@ class Story extends Component {
     this.remarkable = new Remarkable();
   }
 
-  narrativeHtml() {
-    return { __html: this.remarkable.render(this.props.narrative) }
+  narrativeHtml(narrativeMarkup) {
+    return { __html: this.remarkable.render(narrativeMarkup) }
   }
 
   render() {
+    const d = this.props.data;
+    const geo_coordinates = [d.latitude[0], d.longitude[0]];
     return (
       <div className='story'>
-        <MapVignette coordinates={this.props.geo_coordinates} />
+        <MapVignette coordinates={geo_coordinates} />
         <blockquote className="epigraph">
-          <p>{this.props.epigraph}</p>
-          <footer>- <cite> Stranger no. {this.props.stranger_id}</cite></footer>
+          <p>{d.epigraph}</p>
+          <footer>- <cite> Stranger no. {d.stranger_id}</cite></footer>
         </blockquote>
-        <h1 className='title'>{this.props.title}</h1>
-        <div className="narrative" dangerouslySetInnerHTML={this.narrativeHtml()} />
+        <h1 className='title'>{d.title}</h1>
+        <div className="narrative" dangerouslySetInnerHTML={this.narrativeHtml(d.narrative)} />
         <blockquote className="solicitation">
           <p>helloStranger stories take encounters between strangers as a starting point. 
           If you like this project please take a moment to&nbsp;
@@ -31,7 +33,7 @@ class Story extends Component {
             remember a stranger</a> or choose another story to read from the map below.
           </p>
         </blockquote>
-        <MapExplorer coordinates={this.props.geo_coordinates} />
+        <MapExplorer coordinates={geo_coordinates} />
       </div>
     );
   }

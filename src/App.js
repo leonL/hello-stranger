@@ -22,13 +22,8 @@ class App extends Component {
   }
 
   story = () => {
-    const s = this.state.stories[0]
-    return <Story 
-      title={s.get('title')} 
-      epigraph={s.get('epigraph')} 
-      geo_coordinates={ [s.get('latitude')[0], s.get('longitude')[0]] } 
-      stranger_id={s.get('stranger_id')} 
-      narrative={s.get('narrative')} />    
+    const storyData = this.state.stories[0].fields
+    return <Story data={storyData} />    
   }
 
   render() {
