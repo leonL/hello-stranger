@@ -30,7 +30,7 @@ class Story extends Component {
           <p>helloStranger stories take encounters between strangers as a starting point. 
           If you like this project please take a moment to&nbsp;
           <a href="https://airtable.com/shrhBkljBMeLUa4wR" target="_blank" rel="noopener noreferrer">
-            remember a stranger</a> or choose another story to read from the map below.
+            remember a stranger</a> or select another story from the map below.
           </p>
         </blockquote>
         <MapExplorer coordinates={geo_coordinates} />
