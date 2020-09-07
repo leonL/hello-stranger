@@ -14,12 +14,13 @@ blockquote p {
 }
 
 .narrative {
-  margin: 0 24px;
+  margin: 0 24px 30px;
+  border-bottom: 1.5px solid black;
 }
 
 .narrative p {
   font-family: 'Libre Caslon Text', 'Times New Roman', Times, serif;
   font-size: 18px;
   line-height: 34px;
-  color: rgba(0, 0, 0, 1);
+  color: black;
 }
