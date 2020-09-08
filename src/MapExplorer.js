@@ -11,7 +11,7 @@ class MapExplorer extends Component {
   render() {
     const p = this.props;
     const otherStoryMarkers = p.otherStoryMarkerData.map((d) =>
-      <CircleMarker onClick={this.storySelected} key={d.id} id={d.id} center={d.coordinates} radius={3} color={'#AAD6A0'} fillOpacity={1} />
+      <CircleMarker onClick={this.storySelected} key={d.id} id={d.id} center={d.coordinates} radius={10} color={'#AAD6A0'} fillOpacity={0.5} />
     );
     return (
       <Map className="explorer" 
@@ -23,7 +23,7 @@ class MapExplorer extends Component {
           url='https://stamen-tiles-{s}.a.ssl.fastly.net/toner-background/{z}/{x}/{y}{r}.png' // zoomMax = 20
           // attribution='Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         />
-          <CircleMarker key={p.currentStoryMarkerData.id} center={p.currentStoryMarkerData.coordinates} radius={3} color={'#65463E'} fillOpacity={1} />
+          <CircleMarker key={p.currentStoryMarkerData.id} center={p.currentStoryMarkerData.coordinates} radius={10} color={'#65463E'} fillOpacity={0.5} />
           {otherStoryMarkers}
       </Map>
     );
