@@ -23,7 +23,7 @@
 }
 
 .preview .narrative p:nth-child(2) {
-  opacity: 50%;
+  opacity: 0.5;
   height: 100px;
   overflow: hidden;
 }
