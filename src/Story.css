@@ -1,21 +1,8 @@
-.story {
-  grid-row-start: 1;
-  overflow-y: scroll;
-}
-
 .story .title {
   font-family: 'Fira Sans', sans-serif;
   margin: 10px 24px;
   font-weight: 500;
   color: black;
-}
-
-blockquote {
-  line-height: 19px;
-}
-
-blockquote p {
-  font-family: 'Fira Sans', sans-serif;
 }
 
 .narrative {

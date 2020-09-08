@@ -9,6 +9,19 @@ html, body, #root {
   grid-template-rows: 1fr auto;
 }
 
+.story {
+  grid-row-start: 1;
+  overflow-y: scroll;
+}
+
+blockquote {
+  line-height: 19px;
+}
+
+blockquote p {
+  font-family: 'Fira Sans', sans-serif;
+}
+
 .footer {
   grid-row-start: 2;
   background: #AAD6A0;
