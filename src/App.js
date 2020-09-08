@@ -26,8 +26,7 @@ class App extends Component {
   componentDidUpdate(prevProps) {
     this.storyRef.current.scrollTo({
       top: 0,
-      left: 0,
-      behavior: 'smooth'
+      left: 0
     });
   }
   
