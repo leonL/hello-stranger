@@ -9,6 +9,7 @@ const helloStrangerBase = new Airtable({ apiKey: process.env.REACT_APP_AIRTABLE_
 class App extends Component {
   constructor(props) {
     super(props);
+    this.storyRef = React.createRef();
     this.state = {
       stories: [],
       currentStoryId: null
@@ -20,9 +21,16 @@ class App extends Component {
       if (err) { console.error(err); return;  } 
       this.setState({ stories: records });
     });
-    window.addEventListener('resize', this.onBrowserWindowResize);
   }
 
+  componentDidUpdate(prevProps) {
+    this.storyRef.current.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }
+  
   currentStoryId = () => {
     const s = this.state;
     let id = s.currentStoryId ? s.currentStoryId : s.stories[0].get('id');
@@ -66,13 +74,17 @@ class App extends Component {
     return <a href="https://airtable.com/shrhBkljBMeLUa4wR" target="_blank" rel="noopener noreferrer">remember a stranger</a>
   }
 
+  storySelected = (id) => {
+    this.setState({currentStoryId: id})
+  }
+
   render() {
     const storiesLoaed = this.state.stories.length > 0;
     let view;
     if (!storiesLoaed) {
       view = <div className="loading">Loading...</div> 
     } else {
-      view = <div className='story'>
+      view = <div className='story' ref={this.storyRef}>
         <Story data={ this.currentStoryData() } />
         <blockquote className="solicitation">
           <p>
@@ -80,7 +92,9 @@ class App extends Component {
             If you like this project please take a moment to { this.rememberStrangerLink() }.
           </p>
         </blockquote>
-        <MapExplorer currentStoryMarkerData={ this.currentStoryMarkerData() } otherStoryMarkerData={ this.otherStoryMarkerData() } />
+        <MapExplorer storySelected={ this.storySelected } 
+          currentStoryMarkerData={ this.currentStoryMarkerData() } 
+          otherStoryMarkerData={ this.otherStoryMarkerData() } />
       </div>
     }
     return (

@@ -4,10 +4,14 @@ import './MapExplorer.css';
 
 class MapExplorer extends Component {
 
+  storySelected = (e) => {
+    this.props.storySelected(e.target.options.id)
+  }
+
   render() {
     const p = this.props;
     const otherStoryMarkers = p.otherStoryMarkerData.map((d) =>
-      <CircleMarker key={d.id} center={d.coordinates} radius={3} color={'#AAD6A0'} fillOpacity={1} />
+      <CircleMarker onClick={this.storySelected} key={d.id} id={d.id} center={d.coordinates} radius={3} color={'#AAD6A0'} fillOpacity={1} />
     );
     return (
       <Map className="explorer" 
