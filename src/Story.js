@@ -34,7 +34,7 @@ class Story extends Component {
         <MapVignette coordinates={geo_coordinates} />
         <blockquote className="epigraph">
           <p>{d.epigraph}</p>
-          <footer>- <cite> Stranger no. {d.stranger_id}</cite></footer>
+          <footer>- <cite className="highlight"> Encounter no. {d.encounter_id}</cite></footer>
         </blockquote>
         <h1 className='title'>{d.title}</h1>
         <div className="narrative" dangerouslySetInnerHTML={this.narrativeHtml(d.narrative)} />

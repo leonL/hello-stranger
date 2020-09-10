@@ -87,8 +87,8 @@ class App extends Component {
         <Story data={ this.currentStoryData() } />
         <blockquote className="solicitation">
           <p>
-            helloStranger stories take encounters between strangers as a starting point. 
-            If you like this project please take a moment to { this.rememberStrangerLink() }.
+          helloStranger fictions are inspired by everyday <span className='highlight'>encounters</span> between 
+          strangers. Help inspire the next story – please take a moment to { this.rememberStrangerLink() }.
           </p>
         </blockquote>
         <MapExplorer storySelected={ this.storySelected } 

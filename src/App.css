@@ -29,6 +29,11 @@ blockquote p {
   font-family: 'Fira Sans', sans-serif;
 }
 
+.highlight {
+  color: #65463E;
+  font-weight: bold;
+}
+
 .footer {
   grid-row-start: 2;
   background: #AAD6A0;
