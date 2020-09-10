@@ -102,7 +102,7 @@ class App extends Component {
       <div className="container">          
         { view }
         <div className='footer'>
-          <h3 className='title'>helloStranger</h3>
+          <h4 className='title'>helloStranger</h4>
         </div> 
       </div>
     );
