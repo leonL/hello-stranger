@@ -86,11 +86,13 @@ class App extends Component {
       view = <div className='story' ref={this.storyRef}>
         <Story data={ this.currentStoryData() } />
         <blockquote className="solicitation">
-          <p>
-          helloStranger fictions are inspired by everyday <span className='highlight'>encounters</span> between 
-          strangers. Help inspire the next story – please take a moment to { this.rememberStrangerLink() }.
-          </p>
+          <p>helloStranger fiction is inspired by everyday <span className='highlight'>encounters</span> between strangers.</p> 
+          <p>Inspire our next creation: take a moment to { this.rememberStrangerLink() }.</p>
         </blockquote>
+        <div className='story-map-title'>
+          <h4 className='legend'>More Stories From Here</h4>
+          <span className="mint-circle"></span>
+        </div>
         <StoryMap storySelected={ this.storySelected } 
           currentStoryMarkerData={ this.currentStoryMarkerData() } 
           otherStoryMarkerData={ this.otherStoryMarkerData() } />

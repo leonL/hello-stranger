@@ -17,7 +17,7 @@ class MapVignette extends Component {
           url='https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.png' // zoomMax = 20
           // attribution='Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         />
-        <CircleMarker center={this.props.coordinates} radius={70} color={'#AAD6A0'} fillOpacity={0.5} />
+        <CircleMarker center={this.props.coordinates} radius={70} color={'#AAD6A0'} fillOpacity={0.5} weight={2} />
       </Map>
     );
   }
