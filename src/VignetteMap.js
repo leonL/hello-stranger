@@ -11,6 +11,8 @@ class MapVignette extends Component {
         zoom={16} 
         zoomControl={false} 
         touchZoom={false}
+        doubleClickZoom={false}
+        scrollWheelZoom={false}
         dragging={false}>
         attributionControl={false} 
         <TileLayer
