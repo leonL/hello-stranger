@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Map, TileLayer, CircleMarker } from 'react-leaflet';
-import './MapVignette.css';
+import './VignetteMap.css';
 
 class MapVignette extends Component {
 

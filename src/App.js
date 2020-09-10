@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Story from './Story.js'
-import MapExplorer from './MapExplorer.js';
+import StoryMap from './StoryMap.js';
 import './App.css';
 
 import Airtable from 'airtable';
@@ -91,7 +91,7 @@ class App extends Component {
           strangers. Help inspire the next story – please take a moment to { this.rememberStrangerLink() }.
           </p>
         </blockquote>
-        <MapExplorer storySelected={ this.storySelected } 
+        <StoryMap storySelected={ this.storySelected } 
           currentStoryMarkerData={ this.currentStoryMarkerData() } 
           otherStoryMarkerData={ this.otherStoryMarkerData() } />
       </div>

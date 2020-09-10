@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Remarkable } from 'remarkable';
-import MapVignette from './MapVignette.js'
+import VignetteMap from './VignetteMap.js'
 import './Story.css';
 
 class Story extends Component {
@@ -31,7 +31,7 @@ class Story extends Component {
     const geo_coordinates = [d.latitude[0], d.longitude[0]];
     return (
       <div className={this.state.preview ? "preview" : ""}>
-        <MapVignette coordinates={geo_coordinates} />
+        <VignetteMap coordinates={geo_coordinates} />
         <blockquote className="epigraph">
           <p>{d.epigraph}</p>
           <footer>- <cite className="highlight"> Encounter no. {d.encounter_id}</cite></footer>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Map, TileLayer, CircleMarker } from 'react-leaflet';
-import './MapExplorer.css';
+import './StoryMap.css';
 
 class MapExplorer extends Component {
 
