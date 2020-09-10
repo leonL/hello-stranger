@@ -90,7 +90,7 @@ class App extends Component {
           <p>Inspire our next creation: take a moment to { this.rememberStrangerLink() }.</p>
         </blockquote>
         <div className='story-map-title'>
-          <h4 className='legend'>More Stories From Here</h4>
+          <h3 className='legend'>More Stories From Here</h3>
           <span className="mint-circle"></span>
         </div>
         <StoryMap storySelected={ this.storySelected } 
