@@ -32,7 +32,7 @@ class App extends Component {
   
   currentStoryId = () => {
     const s = this.state;
-    let id = s.currentStoryId ? s.currentStoryId : s.stories[0].get('id');
+    let id = s.currentStoryId ? s.currentStoryId : 5; // the id of the story 'Slumming'
     return id;
   }
 
