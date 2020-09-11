@@ -24,7 +24,7 @@ class MapExplorer extends Component {
           url='https://stamen-tiles-{s}.a.ssl.fastly.net/toner-background/{z}/{x}/{y}{r}.png' // zoomMax = 20
           // attribution='Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         />
-          <CircleMarker key={p.currentStoryMarkerData.id} center={p.currentStoryMarkerData.coordinates} radius={10} color={'#AAD6A0'} fillOpacity={0.3} weight={2} />
+          <CircleMarker key={p.currentStoryMarkerData.id} center={p.currentStoryMarkerData.coordinates} radius={9} interactive={false} color={'#AAD6A0'} fillOpacity={0.3} weight={2} />
           {otherStoryMarkers}
       </Map>
     );

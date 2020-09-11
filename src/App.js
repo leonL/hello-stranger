@@ -89,10 +89,7 @@ class App extends Component {
           <p>helloStranger fiction is inspired by everyday <span className='highlight'>encounters</span> between strangers.</p> 
           <p>Inspire our next creation: take a moment to { this.rememberStrangerLink() }.</p>
         </blockquote>
-        <div className='story-map-title'>
-          <h3 className='legend'>More Stories From Here</h3>
-          <span className="mint-circle"></span>
-        </div>
+        <h3 className='story-map-title'>More Stories From Here</h3>
         <StoryMap storySelected={ this.storySelected } 
           currentStoryMarkerData={ this.currentStoryMarkerData() } 
           otherStoryMarkerData={ this.otherStoryMarkerData() } />
