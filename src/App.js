@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { Remarkable } from 'remarkable';
 import Story from './Story.js'
 import StoryMap from './StoryMap.js';
+import hamburgerIcon from './hamburger.png';
 import './App.css';
 
 import Airtable from 'airtable';
@@ -10,16 +12,25 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.storyRef = React.createRef();
+    this.remarkable = new Remarkable();
     this.state = {
       stories: [],
-      currentStoryId: null
+      metaText: null,
+      currentStoryId: null,
+      showMenu: false
     };
   }
 
   componentDidMount() {
     helloStrangerBase('stories').select().firstPage((err, records) => {
+      console.log(records)
       if (err) { console.error(err); return;  } 
       this.setState({ stories: records });
+    });
+    helloStrangerBase('metaText').select().firstPage((err, records) => {
+      console.log(records)
+      if (err) { console.error(err); return;  } 
+      this.setState({ metaText: records[0] });
     });
   }
 
@@ -77,8 +88,17 @@ class App extends Component {
     this.setState({currentStoryId: id})
   }
 
+  toggleMenu = () => {
+    let showMenu = this.state.showMenu;
+    this.setState({showMenu: !showMenu})
+  }
+
+  aboutPageHtml(aboutMarkup) {
+    return { __html: this.remarkable.render(aboutMarkup) }
+  }
+
   render() {
-    const storiesLoaed = this.state.stories.length > 0;
+    const s = this.state, storiesLoaed = s.stories.length > 0;
     let view;
     if (!storiesLoaed) {
       view = <div className="loading">Loading...</div> 
@@ -96,11 +116,19 @@ class App extends Component {
       </div>
     }
     return (
-      <div className="container">          
+      <div className={`container ${this.state.showMenu ? 'menu' : ''}`}>          
         { view }
         <div className='footer'>
+          <img src={hamburgerIcon} className="menu-icon" alt="menu icon" onClick= {this.toggleMenu } />
           <h4 className='title'>helloStranger</h4>
         </div> 
+        <div className='about'>
+          <h1 className="title">helloStranger</h1>
+          <h3 className="title sub title">Stories in View of the Hidden</h3>
+          {s.metaText &&
+            <div className="introduction" dangerouslySetInnerHTML={this.aboutPageHtml(s.metaText.get('about'))} />
+          }
+        </div>
       </div>
     );
   }
