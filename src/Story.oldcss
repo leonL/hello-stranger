@@ -1,15 +1,12 @@
-.story {
-  margin: 0 24px;
-}
-
 .story .title {
   font-family: 'Fira Sans', sans-serif;
-  margin: 0;
+  margin: 10px 24px;
   font-weight: 500;
   color: black;
 }
 
 .narrative {
+  margin: 0 24px 24px;
   border-bottom: 1.5px solid black;
 }
 
@@ -21,11 +18,11 @@
   margin-bottom: 0;
 }
 
-.preview .narrative p:nth-child(n+2) {
+.preview .narrative p:nth-child(n+3) {
   display: none;
 }
 
-.preview .narrative p:nth-child(1) {
+.preview .narrative p:nth-child(2) {
   opacity: 0.5;
   height: 100px;
   overflow: hidden;
