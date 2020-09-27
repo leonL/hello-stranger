@@ -1,0 +1,102 @@
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  max-width: 770px;
+  margin: 0 auto;
+  box-shadow: 0px 0px 10px rgba(54, 38, 36, 0.8);
+}
+
+.container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr auto 0px; 
+}
+
+.story {
+  grid-row-start: 1;
+  overflow-y: scroll;
+}
+
+blockquote {
+  line-height: 19px;
+}
+
+blockquote p {
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.solicitation {
+  border-bottom: 1.5px solid black;
+  margin-left: 24px;
+  margin-right: 24px;
+  padding: 0 14px;
+}
+
+.highlight {
+  color: #65463E;
+  font-weight: bold;
+}
+
+.story-map-title {
+  font-family: 'Fira Sans', sans-serif;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 3px;
+  text-decoration: underline;
+}
+
+.footer {
+  grid-row-start: 2;
+  background: #AAD6A0;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.5);
+  text-align: center;
+  position: relative;
+}
+
+.footer .title {
+  color: rgba(0, 0, 0, 1);
+  margin: 2px 0 0;
+  font-family: 'Rock Salt', sans-serif;
+}
+
+.footer .menu-icon {
+  position: absolute;
+  bottom: 1px;
+  left: 5px;
+  height: 40px;
+  width: 40px;
+}
+
+.menu-icon:hover {
+  cursor: pointer;
+}
+
+.about {
+  grid-row-start: 3;
+  margin: 10px 24px;
+}
+
+.about .title {
+  font-family: 'Fira Sans', sans-serif;
+  margin: 0 24px;
+  font-weight: 500;
+  color: black;
+  text-align: center;
+}
+
+.about .sub.title {
+  margin-top: 0;
+}
+
+.container.menu .about {
+  grid-row-start: 1;
+  overflow-y: scroll;
+}
+
+.container.menu .story {
+  grid-row-start: 3;
+}
