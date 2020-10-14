@@ -10,16 +10,14 @@ class MapVignette extends Component {
         center={this.props.coordinates} 
         zoom={16} 
         zoomControl={false} 
-        touchZoom={false}
+        // touchZoom={false}
         doubleClickZoom={false}
         scrollWheelZoom={false}
         dragging={false}
         attributionControl={false} >
         <TileLayer
-          url='https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.png' // zoomMax = 20
-          // attribution='Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url='https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png' // zoomMax = 20
         />
-        <CircleMarker center={this.props.coordinates} radius={70} color={'#AAD6A0'} fillOpacity={0.5} weight={2} />
       </Map>
     );
   }
