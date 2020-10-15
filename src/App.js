@@ -16,7 +16,6 @@ class App extends Component {
 
   componentDidMount() {
     helloStrangerBase('stories').select().firstPage((err, records) => {
-      console.log(records);
       if (err) { console.error(err); return;  } 
       this.setState({ stories: records });
     });

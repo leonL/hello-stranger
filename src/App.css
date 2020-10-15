@@ -22,13 +22,12 @@ html, body, #root, body {
 
 .header #hello {
   margin: 0;
-  background-color: #AAD6A0;
+  background-color: #00B4D1;
   color: white;
 }
 
 .header #stranger {
   margin: 0;
-  color: #3B0918;
   font-weight: NORMAL;
   font-family: 'Rock Salt', sans-serif;
   position: absolute;
