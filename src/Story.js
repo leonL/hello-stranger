@@ -1,49 +1,56 @@
 import React, { Component } from 'react';
+import { withRouter } from "react-router-dom";
 import { Remarkable } from 'remarkable';
-import VignetteMap from './VignetteMap.js'
 import './Story.css';
+
+import Airtable from 'airtable';
+const helloStrangerBase = new Airtable({ apiKey: process.env.REACT_APP_AIRTABLE_READ_KEY }).base('appu19XYiAbXm9wJs');
 
 class Story extends Component {
   constructor(props) {
-    super(props);
+    super();
     this.remarkable = new Remarkable();
     this.state = {
-      preview: true
+      story: false
     };
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if(prevState.preview === false) {
-      this.setState({preview: true})
-    }
+  componentDidMount() {
+    let storyNAME = this.props.match.params.id;
+    helloStrangerBase('stories').select({filterByFormula: `{NAME} = ${storyNAME}`}).firstPage((err, record) => {
+      if (err) { console.error(err); return;  }
+      this.setState({ story: record[0].fields });
+    });
   }
 
   narrativeHtml(narrativeMarkup) {
     return { __html: this.remarkable.render(narrativeMarkup) }
   }
 
-  showFullNarrative = () => {
-    this.setState({preview: false})
-  }
-
   render() {
-    const d = this.props.data;
-    const geo_coordinates = [d.latitude[0], d.longitude[0]];
-    return (
-      <div className={this.state.preview ? "preview" : ""}>
-        <VignetteMap coordinates={geo_coordinates} />
+    const story = this.state.story;
+
+    let view;
+    if (!story) {
+      view = <div className="loading">Loading...</div> 
+    } else {
+      view = <div className='body'>
         <blockquote className="epigraph">
-          <p>{d.epigraph}</p>
-          <footer>- <cite className="highlight"> Encounter no. {d.encounter_id}</cite></footer>
+          <p>{story.epigraph}</p>
+          <footer>- <cite className="highlight"> Encounter no. {story.encounter_NAME}</cite></footer>
         </blockquote>
-        <h1 className='title'>{d.title}</h1>
-        <div className="narrative" dangerouslySetInnerHTML={this.narrativeHtml(d.narrative)} />
-        {this.state.preview &&
-          <button className='continue' onClick={this.showFullNarrative}>...</button>
-        }
+        <h1 className='title'>{story.title}</h1>
+        <div className="narrative" dangerouslySetInnerHTML={this.narrativeHtml(story.narrative)} />
+      </div>
+    }
+
+    return (
+      <div className='story'>
+        {view} 
       </div>
     );
   }
+
 }
 
-export default Story;
+export default withRouter(Story);
