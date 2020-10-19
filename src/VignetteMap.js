@@ -8,9 +8,9 @@ class MapVignette extends Component {
     return (
       <Map className="vignette" 
         center={this.props.coordinates} 
-        zoom={16} 
+        zoom={15} 
         zoomControl={false} 
-        // touchZoom={false}
+        touchZoom={false}
         doubleClickZoom={false}
         scrollWheelZoom={false}
         dragging={false}
