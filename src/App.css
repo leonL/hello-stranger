@@ -37,8 +37,10 @@ html, body, #root, body {
 }
 
 .hello-stranger .front-cover {
-  position: relative;
+  position: fixed;
+  z-index: 500;
   margin: 0;
+  background-color: white;
 }
 
 .front-cover .illustration {
@@ -70,7 +72,7 @@ html, body, #root, body {
 
 .hello-stranger .table-of-contents {
   list-style-type: none;
-  padding: 0;
+  padding: 180px 0 0;
 }
 
 .table-of-contents .story-cover {
