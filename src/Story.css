@@ -1,5 +1,5 @@
 .story .body {
-  margin-top: 50px;
+  margin-top: 18px;
 }
 
 blockquote {
@@ -12,9 +12,14 @@ blockquote p {
 
 .story .title {
   font-family: 'Fira Sans', sans-serif;
-  margin: 10px 24px;
+  margin: 10px 0;
   font-weight: 500;
   color: black;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 40px;
+  z-index: 600;
 }
 
 .narrative {

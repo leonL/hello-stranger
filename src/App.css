@@ -15,9 +15,7 @@ html, body, #root, body {
   position: fixed;
   top: 0;
   z-index: 600;
-  padding-bottom: 15px;
   background-color: white;
-  opacity: 0.9;
 }
 
 .header #hello {
@@ -72,7 +70,7 @@ html, body, #root, body {
 
 .hello-stranger .table-of-contents {
   list-style-type: none;
-  padding: 180px 0 0;
+  padding: 190px 0 0;
 }
 
 .table-of-contents .story-cover {

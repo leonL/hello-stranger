@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Map, TileLayer, CircleMarker } from 'react-leaflet';
-import './VignetteMap.css';
+import './VignetteMapLabel.css';
 
-class MapVignette extends Component {
+class VignetteMapLabels extends Component {
 
   render() {
     return (
       <Map className="vignette" 
         center={this.props.coordinates} 
-        zoom={15} 
+        zoom={16} 
         zoomControl={false} 
         touchZoom={false}
         doubleClickZoom={false}
@@ -23,4 +23,4 @@ class MapVignette extends Component {
   }
 }
 
-export default MapVignette;
+export default VignetteMapLabels;

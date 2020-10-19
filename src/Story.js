@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
 import { Remarkable } from 'remarkable';
+import VignetteMapLabels from './VignetteMapLabels.js';
 import './Story.css';
 
 import Airtable from 'airtable';
@@ -29,17 +30,19 @@ class Story extends Component {
 
   render() {
     const story = this.state.story;
-
+    
     let view;
     if (!story) {
       view = <div className="loading">Loading...</div> 
     } else {
+      let geo_coordinates = [story.latitude[0], story.longitude[0]];
       view = <div className='body'>
+        <VignetteMapLabels coordinates={geo_coordinates} />
+        <h1 className='title'>{story.title}</h1>
         <blockquote className="epigraph">
           <p>{story.epigraph}</p>
           <footer>- <cite className="highlight"> Encounter no. {story.encounter_NAME}</cite></footer>
         </blockquote>
-        <h1 className='title'>{story.title}</h1>
         <div className="narrative" dangerouslySetInnerHTML={this.narrativeHtml(story.narrative)} />
       </div>
     }
