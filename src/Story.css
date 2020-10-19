@@ -12,14 +12,13 @@ blockquote p {
 
 .story .title {
   font-family: 'Fira Sans', sans-serif;
-  margin: 10px 0;
+  margin: 5px 12px;
   font-weight: 500;
   color: black;
   position: absolute;
-  width: 100%;
-  text-align: center;
-  top: 40px;
+  top: 80px;
   z-index: 600;
+  font-size: 40px;
 }
 
 .narrative {
