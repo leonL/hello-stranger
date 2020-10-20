@@ -39,9 +39,21 @@ class Story extends Component {
       view = <div className='body'>
         <VignetteMapLabels coordinates={geo_coordinates} />
         <h1 className='title'>{story.title}</h1>
-        <blockquote className="epigraph">
-          <p>{story.epigraph}</p>
-          <footer>- <cite className="highlight"> Encounter no. {story.encounter_NAME}</cite></footer>
+        <blockquote className='overture'>
+          <p className="epigraph">{story.epigraph}</p>
+          <footer>
+            ~ <cite className="highlight"> Encounter no. {story.encounter_NAME}</cite>
+            <p className='fine-print'>
+              Encounters are <a href='https://airtable.com/shrhBkljBMeLUa4wR' target='blank'>shared</a> with
+              helloStranger anonymously. Our writers read everything you send but only write stories  
+              inspired by a select few, based on their interests and discretion. 
+              What follows is an act of imagination.  
+              Any resemblance between the characters in this story and any persons, living or dead, is a small miracle.
+            </p>
+          </footer>
+        </blockquote>
+        <blockquote className='disclaimer'>
+          <p></p>
         </blockquote>
         <div className="narrative" dangerouslySetInnerHTML={this.narrativeHtml(story.narrative)} />
       </div>

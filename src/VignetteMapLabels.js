@@ -14,7 +14,7 @@ class VignetteMapLabels extends Component {
         <TileLayer
           url='https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png'// zoomMax = 20
         />
-        <CircleMarker center={this.props.coordinates} radius={4} interactive={false} color={'black'} fillOpacity={0.7} weight={1} />
+        <CircleMarker center={this.props.coordinates} radius={3} interactive={false} color={'darkred'} fillOpacity={1} weight={0} />
       </Map>
     );
   }

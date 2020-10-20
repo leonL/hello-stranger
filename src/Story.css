@@ -2,14 +2,6 @@
   margin-top: 18px;
 }
 
-blockquote {
-  line-height: 19px;
-}
-
-blockquote p {
-  font-family: 'Fira Sans', sans-serif;
-}
-
 .story .title {
   font-family: 'Fira Sans', sans-serif;
   margin: 5px 12px;
@@ -20,6 +12,24 @@ blockquote p {
   z-index: 600;
   font-size: 40px;
 }
+
+.story .overture {
+  padding-top: 1px;
+}
+
+.overture .epigraph {
+  font-family: 'Fira Sans', sans-serif;
+  line-height: 19px;
+}
+
+.overture .fine-print {
+  font-size: 12px;
+  margin: 20px -40px 15px;
+  /* border-radius: 5px; */
+  padding: 12px 35px 15px;
+  background-color: #DAE9CB;
+}
+
 
 .narrative {
   margin: 0 24px 24px;
