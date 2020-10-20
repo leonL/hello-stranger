@@ -16,7 +16,7 @@ class MapVignette extends Component {
         dragging={false}
         attributionControl={false} >
         <TileLayer
-          url='https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png' // zoomMax = 20
+          url='https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png'// zoomMax = 20
         />
       </Map>
     );

@@ -16,7 +16,7 @@ blockquote p {
   font-weight: 500;
   color: black;
   position: absolute;
-  top: 80px;
+  top: 180px;
   z-index: 600;
   font-size: 40px;
 }
