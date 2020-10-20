@@ -39,6 +39,7 @@ class Story extends Component {
       view = <div className='body'>
         <VignetteMapLabels coordinates={geo_coordinates} />
         <h1 className='title'>{story.title}</h1>
+        <h5 className='by-line'>By Leon Lukashevsky</h5>
         <blockquote className='overture'>
           <p className="epigraph">{story.epigraph}</p>
           <footer>
