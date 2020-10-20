@@ -7,8 +7,8 @@ class VignetteMapLabels extends Component {
   render() {
     return (
       <Map className="vignette" 
-        center={this.props.coordinates} // Toronto's centre roughly speaking
-        zoom={16} 
+        center={[0,0]} // Toronto's centre roughly speaking
+        zoom={0} 
         zoomControl={false}
         attributionControl={false} >
         <TileLayer
