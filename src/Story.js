@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
 import { Remarkable } from 'remarkable';
 import VignetteMapLabels from './VignetteMapLabels.js';
+import infinitySvg from './infinity.svg';
 import './Story.css';
 
 import Airtable from 'airtable';
@@ -51,6 +52,23 @@ class Story extends Component {
           Any resemblance between the characters in this story and any persons, living or dead, is a miracle.
         </p>
         <div className="narrative" dangerouslySetInnerHTML={this.narrativeHtml(story.narrative)} />
+        <div className='fin'>
+          <img src={infinitySvg} alt='small infinity icon marking the end of the story'></img>
+        </div>
+        <div className='afterword'>
+          <blockquote>
+            <p className='munro'>
+              A story is not like a road to follow … it's more like a house. You go inside and stay there for a while, 
+              wandering back and forth and settling where you like and discovering how the room and corridors relate to 
+              each other, how the world outside is altered by being viewed from these windows. And you, the visitor, the reader, 
+              are altered as well by being in this enclosed space, whether it is ample and easy or full of crooked turns, 
+              or sparsely or opulently furnished. You can <a href="#">go back</a> again and again, and the house, the story, always contains 
+              more than you saw the last time. It also has a sturdy sense of itself of being built out of its own necessity, 
+              not just to shelter or beguile you.
+            </p>
+            - <cite>Alice Munro</cite>
+          </blockquote>
+        </div>
       </div>
     }
 

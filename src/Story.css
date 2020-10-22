@@ -46,3 +46,30 @@
   line-height: 34px;
   color: black;
 }
+
+.story .fin {
+  width: 100%;
+  text-align: center;
+  margin: 0 0 24px;
+}
+
+.fin img {
+  width: 70px;
+}
+
+.afterword blockquote {
+  background-color: #00B4D1;
+  margin: 16px 20px;
+  padding: 10px 30px 20px;
+  border-radius: 5px;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.5);
+}
+
+.afterword .munro {
+  font-family: 'Fira Sans', sans-serif;
+  line-height: 22px;
+}
+
+.munro a {
+  font-weight: bold;
+}
