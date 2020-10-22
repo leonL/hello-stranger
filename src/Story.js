@@ -36,32 +36,26 @@ class Story extends Component {
       view = <div className="loading">Loading...</div> 
     } else {
       let geo_coordinates = [story.latitude[0], story.longitude[0]];
-      view = <div className='body'>
+      view = <div className='story'>
         <VignetteMapLabels coordinates={geo_coordinates} />
         <h1 className='title'>{story.title}</h1>
         <h5 className='by-line'>By Leon Lukashevsky</h5>
         <blockquote className='overture'>
-          <p className="epigraph">{story.epigraph}</p>
+          <p className='epigraph'>{story.epigraph}</p>
           <footer>
-            ~ <cite className="highlight"> Encounter no. {story.encounter_NAME}</cite>
-            <p className='fine-print'>
-              Encounters are <a href='https://airtable.com/shrhBkljBMeLUa4wR' target='blank'>shared</a> with
-              helloStranger anonymously. Our writers read everything you send but only write stories  
-              inspired by a select few, based on their interests and discretion. 
-              What follows is an act of imagination.  
-              Any resemblance between the characters in this story and any persons, living or dead, is a small miracle.
-            </p>
+            ~ <cite>Encounter no. {story.encounter_NAME}</cite> 
           </footer>
         </blockquote>
-        <blockquote className='disclaimer'>
-          <p></p>
-        </blockquote>
+        <p className='disclaimer'>
+          The preceding epigraph is a paraphrase of an <span className='italics'>encounter</span> <a href='https://airtable.com/shrhBkljBMeLUa4wR' target='blank'>shared</a> with helloStranger. It has been anonymized and edited for concision and effect.<br /><br />
+          Any resemblance between the characters in this story and any persons, living or dead, is a miracle.
+        </p>
         <div className="narrative" dangerouslySetInnerHTML={this.narrativeHtml(story.narrative)} />
       </div>
     }
 
     return (
-      <div className='story'>
+      <div>
         {view} 
       </div>
     );

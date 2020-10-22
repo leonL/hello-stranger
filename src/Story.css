@@ -1,4 +1,4 @@
-.story .body {
+.story {
   margin-top: 18px;
 }
 
@@ -19,19 +19,24 @@
   font-weight: normal;
 }
 
+.story .italics {
+  font-style: italic;
+}
+
 .overture .epigraph {
   font-family: 'Fira Sans', sans-serif;
   line-height: 19px;
 }
 
-.overture .fine-print {
-  font-size: 12px;
-  margin: 20px -40px 15px;
-  padding: 12px 35px 15px;
+.story .disclaimer {
+  font-size: 14px;
+  margin: 0;
+  padding: 25px 25px 30px;
+  text-align: center;
   background-color: #DAE9CB;
 }
 
-.narrative {
+.story .narrative {
   margin: 0 24px 24px;
 }
 
