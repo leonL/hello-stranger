@@ -48,8 +48,9 @@ class Story extends Component {
           </footer>
         </blockquote>
         <p className='disclaimer'>
-          The preceding epigraph is a paraphrase of an <span className='italics'>encounter</span> <a href='https://airtable.com/shrhBkljBMeLUa4wR' target='blank'>shared</a> with helloStranger. It has been anonymized and edited for concision and effect.<br /><br />
-          Any resemblance between the characters in this story and any persons, living or dead, is a miracle.
+          <span className='italics'>Encounters</span> are <a href='https://airtable.com/shrhBkljBMeLUa4wR' target='blank'>shared</a> with 
+          helloStranger by readers like you. The stories they inspire are works of imagination. 
+          Any resemblance between the characters that appear in them and any persons, living or dead, is a miracle.
         </p>
         <div className="narrative" dangerouslySetInnerHTML={this.narrativeHtml(story.narrative)} />
         <div className='fin'>
