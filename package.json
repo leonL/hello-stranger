@@ -12,7 +12,9 @@
     "react-leaflet": "^2.6.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
-    "remarkable": "^2.0.1"
+    "react-slick": "^0.27.12",
+    "remarkable": "^2.0.1",
+    "slick-carousel": "^1.8.1"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,0 +1,40 @@
+.hello-stranger .encounters-browser {
+  margin: 100px 0 0 0;
+}
+
+.encounters-browser .encounters-slider {
+  margin: 0 auto;
+}
+
+.encounters-slider .encounter {
+}
+
+.encounter .details {
+  padding: 20px;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.encounter .details .anecdote {
+  font-family: 'Libre Caslon Text', 'Times New Roman', Times, serif;
+  font-size: 21px;
+  line-height: 34px;
+  margin: 0;
+  color: black;
+}
+
+.encounters-slider .slick-prev {
+  top: -10px !important;
+  left: unset;
+  right: 50px;
+}
+
+.encounters-slider .slick-next {
+  top: -10px !important;
+  right: 10px;
+}
+
+.encounters-slider .slick-next:before, .slick-prev:before {
+  color: red !important;
+}
