@@ -10,7 +10,7 @@ class MapExplorer extends Component {
   render() {
     const p = this.props;
     const storyMarkers = p.storyMarkerData.map((d, i) =>
-      <CircleMarker key={i} center={d.coordinates} radius={4} color={'black'} fillOpacity={1} stroke={false} />
+      <CircleMarker key={i} center={d.coordinates} radius={5} color={'darkblue'} fillOpacity={0.8} stroke={false} />
     );
     let centreCoords = p.storyMarkerData[p.currentEncounterIndex].coordinates,
     adjustedCentre = [centreCoords[0] + 0.007, centreCoords[1] - 0.003]
@@ -18,11 +18,11 @@ class MapExplorer extends Component {
       <Map className="explorer" 
         center={centreCoords}
         useFlyTo={true}
-        zoom={16} 
+        zoom={15} 
         zoomControl={false} 
         attributionControl={false}>
         <TileLayer
-          url='https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png' // zoomMax = 20
+          url='https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png' // zoomMax = 20
           // attribution='Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         />
           {storyMarkers}

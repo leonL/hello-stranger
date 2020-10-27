@@ -1,6 +1,5 @@
 .explorer.leaflet-container {
   width: 100%;
   margin: 0 auto;
-  height: 100px;
-  /* border-radius: 5px; */
+  height: 200px;
 }
