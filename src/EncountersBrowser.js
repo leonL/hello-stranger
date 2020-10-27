@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 // import { Link } from "react-router-dom";
-// import torontoIllustratedPng from './toSkyLine.png';
-// import VignetteMap from './VignetteMap.js';
+import StoryMap from './StoryMap.js';
 import Slider from "react-slick";
 import './EncountersBrowser.css';
 import "slick-carousel/slick/slick.css";
@@ -14,15 +13,32 @@ class EncountersBrowser extends Component {
   constructor(props) {
     super();
     this.state = {
-      stories: []
+      stories: [],
+      currentEncounterIndex: 0
     };
   }
 
   componentDidMount() {
     helloStrangerBase('stories').select().firstPage((err, records) => {
       if (err) { console.error(err); return;  } 
-      this.setState({ stories: records });
+      this.setState({stories: records});
     });
+  }
+
+  getStoryByIndex = (index) => {
+    let story = this.state.stories[index];
+    return story.fields;
+  }
+
+  storyMarkerData = () => {
+    let data = this.state.stories.map((stories) => {
+      let s = stories.fields;
+      return {
+        encounter_id: s.encounter_NAME,
+        coordinates: [s.latitude[0], s.longitude[0]]
+      }
+    });
+    return data;
   }
 
   encountersSliderHtml = () => {
@@ -33,7 +49,8 @@ class EncountersBrowser extends Component {
       speed: 300,
       arrows: false,
       autoplay: true,
-      autoplaySpeed: 10000
+      autoplaySpeed: 10000,
+      afterChange: newIndex => this.setState({ currentEncounterIndex: newIndex })
     };
     
     let encountersDivs = stories.map((story, i) => {
@@ -45,9 +62,6 @@ class EncountersBrowser extends Component {
         </div>
       </div>
     });
-      {/* <Link to={`/story/${story.get('NAME')}`}>
-        {story.get('title')}
-      </Link> */}
     
     let encountersSliderHtml = <Slider className='encounters-slider' {...sliderSettings}>
       {encountersDivs}
@@ -59,16 +73,19 @@ class EncountersBrowser extends Component {
   render() {
     const s = this.state, storiesLoaded = s.stories.length > 0;
 
-    let encountersHtml;
+    let encountersBrowserHtml;
     if (storiesLoaded) {
-      encountersHtml = this.encountersSliderHtml();
+      encountersBrowserHtml = <div className='browser'>
+        <StoryMap storyMarkerData={this.storyMarkerData()} currentEncounterIndex={s.currentEncounterIndex} />
+        {this.encountersSliderHtml()}
+      </div>
     } else {
-      encountersHtml = <h5>Loading stories...</h5>;
+      encountersBrowserHtml = <h5>Loading stories...</h5>;
     }
 
     return (
-      <div className='encounters-browser'>
-        {encountersHtml}
+      <div className='encounters'>
+        {encountersBrowserHtml}
       </div>
     )
   }
