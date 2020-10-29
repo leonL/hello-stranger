@@ -18,6 +18,7 @@ ul.tiles li.tile {
   width: 85%;
   position: relative;
   box-shadow: 0px 0px 12px rgba(0,0,0,0.3);
+  border-radius: 2px;
 }
 
 li.tile p.encounter {
