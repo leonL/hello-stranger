@@ -10,7 +10,7 @@ class TileMap extends Component {
     return (
       <Map className="map" 
         center={coords} // Toronto's centre roughly speaking
-        zoom={18} 
+        zoom={17} 
         zoomControl={false}
         attributionControl={false} >
         <TileLayer
