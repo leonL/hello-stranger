@@ -16,7 +16,7 @@ class TileMap extends Component {
         <TileLayer
           url='https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png'// zoomMax = 20
         />
-        {/* <CircleMarker center={coords} radius={5} interactive={false} color={'darkred'} fillOpacity={1} weight={0} /> */}
+        {/* <CircleMarker center={coords} radius={3} interactive={false} color={'black'} fillOpacity={1} weight={0} /> */}
       </Map>
     );
   }
