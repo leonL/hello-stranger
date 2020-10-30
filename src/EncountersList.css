@@ -43,10 +43,10 @@ li.tile .marker {
 
 .marker blockquote.epigraph p {
   color: #663333;
-  font-size: 25px;
+  font-size: 21px;
   font-family: 'Libre Caslon Text', 'Times New Roman', Times, serif;
   /* font-family: 'Fira Sans', sans-serif; */
-  line-height: 1.4;
+  line-height: 1;
   padding: 0 10px;
   font-weight: 400;
   margin: 0;
