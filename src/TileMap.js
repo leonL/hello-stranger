@@ -10,13 +10,17 @@ class TileMap extends Component {
     return (
       <Map className="map" 
         center={coords} // Toronto's centre roughly speaking
-        zoom={17} 
-        zoomControl={false}
+        zoom={16} 
+        zoomControl={false} 
+        touchZoom={false}
+        doubleClickZoom={false}
+        scrollWheelZoom={false}
+        dragging={false}
         attributionControl={false} >
         <TileLayer
-          url='https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png'// zoomMax = 20
+          url='https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.png'// zoomMax = 20
         />
-        {/* <CircleMarker center={coords} radius={3} interactive={false} color={'black'} fillOpacity={1} weight={0} /> */}
+        {/* <CircleMarker center={coords} radius={100} interactive={false} color={'#00B4D1'} fillOpacity={1} weight={0} /> */}
       </Map>
     );
   }

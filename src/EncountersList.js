@@ -28,9 +28,12 @@ class EncountersList extends Component {
     let tiles = stories.map((story, i) => {
       return <li key={i} className='tile'>
         <TileMap coordinates={[story.get('latitude')[0], story.get('longitude')[0]]} />
-        <p className='encounter'>
-          {story.get('epigraph')}
-        </p>
+        {/* <h1 className='title'>Encounter no. {story.get('encounter_NAME')}</h1> */}
+        <div className='marker'>
+          <blockquote className='epigraph'>
+            <p>{story.get('epigraph')}</p>
+          </blockquote>
+        </div>
       </li>
     });
 
