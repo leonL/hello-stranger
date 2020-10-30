@@ -10,7 +10,7 @@ class TileMap extends Component {
     return (
       <Map className="map" 
         center={coords} // Toronto's centre roughly speaking
-        zoom={16} 
+        zoom={15} 
         zoomControl={false} 
         touchZoom={false}
         doubleClickZoom={false}
@@ -18,7 +18,7 @@ class TileMap extends Component {
         dragging={false}
         attributionControl={false} >
         <TileLayer
-          url='https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.png'// zoomMax = 20
+          url='https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png'// zoomMax = 20
         />
         {/* <CircleMarker center={coords} radius={100} interactive={false} color={'#00B4D1'} fillOpacity={1} weight={0} /> */}
       </Map>

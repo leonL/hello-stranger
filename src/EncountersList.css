@@ -15,10 +15,10 @@ ul.tiles li.tile:first-child {
 
 ul.tiles li.tile {
   margin: 20px auto;
-  padding: 20px 0 100px;
+  padding: 15px 0 100px;
   width: 92%;
   position: relative;
-  box-shadow: 0px 0px 10px rgba(0,180,209,1);
+  /* box-shadow: 0px 0px 10px rgba(0,180,209,1); */
 }
 
 li.tile .marker {
@@ -32,7 +32,7 @@ li.tile .marker {
 }
 
 .marker blockquote.epigraph {
-  background-color: rgba(247,247,248,0.96);
+  background-color: rgba(255,255,255,0.8);
   border-radius: 3px;
   padding: 5px 0;
   height: 100%;
@@ -42,13 +42,14 @@ li.tile .marker {
 }
 
 .marker blockquote.epigraph p {
-  color: #333652;
+  color: #663333;
   font-size: 18px;
   font-family: 'Fira Sans', sans-serif;
   line-height: 1.5;
   padding: 0 10px;
   font-weight: 400;
   margin: 0;
+  /* text-shadow: 0.5px 0.5px 10px rgba(255, 255, 255, 1); */
 }
 
 li.tile .title {
