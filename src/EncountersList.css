@@ -23,7 +23,7 @@ ul.tiles li.tile {
 
 li.tile .marker {
   width: 88%;
-  margin: 0 auto;
+  margin: 0 auto 0 0;
   position: relative;
   z-index: 500;
   /* border: 1px solid purple; */
@@ -46,7 +46,8 @@ li.tile .marker {
   font-size: 21px;
   font-family: 'Libre Caslon Text', 'Times New Roman', Times, serif;
   /* font-family: 'Fira Sans', sans-serif; */
-  line-height: 1;
+  line-height: 0.95;
+  text-align: right;
   padding: 0 10px;
   font-weight: 400;
   margin: 0;
