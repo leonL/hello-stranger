@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import './App.css';
 
+import Intro from './Intro.js';
 import EncountersList from './EncountersList.js';
 import Story from './Story.js';
 
@@ -21,6 +22,9 @@ class App extends Component {
             <h5 id='stranger'>STRANGER</h5>
           </div>
           <Switch>
+            <Route path="/intro">
+              <Intro />
+            </Route>
             <Route path="/story/:id">
               <Story />
             </Route>

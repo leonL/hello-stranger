@@ -20,7 +20,7 @@ class TileMap extends Component {
         <TileLayer
           url='https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png'// zoomMax = 20
         />
-        {/* <CircleMarker center={coords} radius={100} interactive={false} color={'#00B4D1'} fillOpacity={1} weight={0} /> */}
+        {/* <CircleMarker center={coords} radius={10} interactive={false} color={'black'} fillOpacity={1} weight={0} /> */}
       </Map>
     );
   }

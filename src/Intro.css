@@ -1,0 +1,28 @@
+.hello-stranger .intro {
+  margin: 0px 30px;
+  overflow: hidden;
+}
+
+.intro p {
+  font-family: 'Libre Caslon Text', 'Times New Roman', Times, serif;
+  font-size: 18px;
+  line-height: 1.4;
+  margin: 10px 20px;
+}
+
+.intro p:first-child {
+  padding-top: 65px;
+}
+
+.intro p.action {
+  margin: 20px 0;
+  line-height: 1.25;
+  font-size: 26px;
+}
+
+.intro .illustration {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
