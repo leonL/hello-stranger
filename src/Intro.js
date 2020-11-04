@@ -9,12 +9,12 @@ class Intro extends Component {
 
     return (
       <div className='intro'>
-        <p>Recall a time when a stranger tried getting your attention, whether they were successful or not. 
-          What impression did they make on you? You on them? What happened?</p>
-        <p className='action share'><a href='https://airtable.com/shrhBkljBMeLUa4wR' target='blank'>Share</a> your encounter with us.</p>
-        <p>helloStranger is a group of Toronto authors writing short stories inspired by the anecdotes you send.</p>
-        <p className='action stories'>Check out the <Link to={'/story'}>stories</Link>.</p>
-        <img src={torontoIllustratedPng} className='illustration' alt='illustration of a few iconic Toronto buildings'></img>
+        <p>Recall a time when a stranger tried getting your attention.</p> 
+        <p>What happened?</p>
+        <p>Who was that?</p>
+        <p>helloStranger is fiction inspired by <span className='oomph'>your memories</span> of strangers.</p>
+        <p><a href='https://airtable.com/shrhBkljBMeLUa4wR' target='blank'>Share</a> a memory with us.</p>
+        <p>Or <Link to={'/story'}>read</Link> a story.</p>
       </div>
     )
   }

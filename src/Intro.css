@@ -11,7 +11,11 @@
 }
 
 .intro p:first-child {
-  padding-top: 65px;
+  padding-top: 80px;
+}
+
+.intro .oomph {
+  font-weight: bold;
 }
 
 .intro p.action {
