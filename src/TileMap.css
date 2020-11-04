@@ -1,7 +1,7 @@
 .tile .leaflet-container {
   width: 100%;
-  position: absolute !important;
+  position: absolute;
   top: 0;
   bottom: 0;
-  border-radius: 2px;
+  left: 0;
 }

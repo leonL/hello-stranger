@@ -2,6 +2,19 @@
   height: 100%;
 }
 
+.encounters .intro {
+  font-family: 'Libre Caslon Text', 'Times New Roman', Times, serif;
+  font-size: 27px;
+  line-height: 1.4;
+  margin: 40px auto 0;
+  width: 90%;
+  text-align: center;
+}
+
+.intro .oomph {
+  font-weight: bold;
+}
+
 .encounters ul.tiles {
   height: 100%;
   list-style: none;
@@ -10,51 +23,66 @@
 }
 
 ul.tiles li.tile:first-child {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 ul.tiles li.tile {
   margin: 20px auto;
-  padding: 5px 0 75px;
   width: 92%;
   position: relative;
   /* box-shadow: 0px 0px 10px rgba(0,180,209,1); */
-}
-
-li.tile .marker {
-  width: 88%;
-  margin: 0 auto 0 5px;
-  position: relative;
-  z-index: 500;
-  /* border: 1px solid purple; */
-  /* box-shadow: 0px 0px 2px rgba(51,54,82,0.5); */
-  border-radius: 5px;
-}
-
-.marker blockquote.epigraph {
-  background-color: rgba(255,255,255,0.8);
-  border-radius: 3px;
-  padding: 5px 0;
-  height: 100%;
-  width: 100%;
-  position: relative;
-  margin: 0;
-}
-
-.marker blockquote.epigraph p {
-  color: #663333;
-  font-size: 21px;
-  font-family: 'Libre Caslon Text', 'Times New Roman', Times, serif;
-  /* font-family: 'Fira Sans', sans-serif; */
-  line-height: 0.95;
-  text-align: right;
-  padding: 0 10px;
-  font-weight: 400;
-  margin: 0;
-  /* text-shadow: 0.5px 0.5px 10px rgba(255, 255, 255, 1); */
+  /* border: 1px dotted red; */
 }
 
 li.tile .title {
+  font-family: 'Fira Sans', sans-serif;
+  margin: 0;
+  font-weight: 500;
+  color: black;
+  font-size: 30px;
+}
+
+li.tile .by-line {
+  margin: 0;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: normal;
+}
+
+li.tile .memory {
+  margin: 15px auto;
+  position: relative;
+  padding: 30px 10px;
+  /* border: 1px solid purple; */
+  /* box-shadow: 0px 0px 2px rgba(51,54,82,0.5); */
+  border-radius: 5px;
+  /* border: 1px solid black; */
+}
+
+.memory blockquote.epigraph {
+  background-color: rgba(255,255,255,0.9);
+  border-radius: 3px;
+  z-index: 500;
+  padding: 5px;
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.memory blockquote.epigraph p {
+  color: #663333;
+  font-size: 17px;
+  font-family: 'Libre Caslon Text', 'Times New Roman', Times, serif;
+  /* font-family: 'Fira Sans', sans-serif; */
+  line-height: 0.95;
+  /* text-align: right; */
+  padding: 0px;
+  font-weight: 400;
+  margin: 0;
+  width: 100%;
+  /* text-shadow: 0.5px 0.5px 10px rgba(255, 255, 255, 1); */
+}
+
+/* li.tile .title {
   font-family: 'Fira Sans', sans-serif;
   position: relative;
   z-index: 500;
@@ -62,4 +90,4 @@ li.tile .title {
   text-align: center;
   margin: 0 0 10px;
   background-color: rgba(247,247,248,0.3);
-}
+} */

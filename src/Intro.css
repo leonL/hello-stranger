@@ -5,17 +5,9 @@
 
 .intro p {
   font-family: 'Libre Caslon Text', 'Times New Roman', Times, serif;
-  font-size: 18px;
+  font-size: 27px;
   line-height: 1.4;
-  margin: 10px 20px;
-}
-
-.intro p:first-child {
-  padding-top: 80px;
-}
-
-.intro .oomph {
-  font-weight: bold;
+  margin: 40px 0px;
 }
 
 .intro p.action {

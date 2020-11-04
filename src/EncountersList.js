@@ -27,9 +27,10 @@ class EncountersList extends Component {
     
     let tiles = stories.map((story, i) => {
       return <li key={i} className='tile'>
-        <TileMap coordinates={[story.get('latitude')[0], story.get('longitude')[0]]} />
-        {/* <h1 className='title'>Encounter no. {story.get('encounter_NAME')}</h1> */}
-        <div className='marker'>
+        <h1 className='title'>{story.get('title')}</h1>
+        <h5 className='by-line'>By Leon Lukashevsky</h5>
+        <div className='memory'>
+          <TileMap coordinates={[story.get('latitude')[0], story.get('longitude')[0]]} />
           <blockquote className='epigraph'>
             <p>{story.get('epigraph')}</p>
           </blockquote>
@@ -54,6 +55,7 @@ class EncountersList extends Component {
 
     return (
       <div className='encounters'>
+        <p className='intro'>Fiction inspired by encounters with strangers</p>
         {encounters}
       </div>
     )
