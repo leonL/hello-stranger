@@ -3,8 +3,9 @@
 }
 
 .encounters-map .epigraph {
-  line-height: 1.6;
-  font-size: 16px;
-  padding: 10px;
+  font-family: 'Libre Caslon Text', 'Times New Roman', Times, serif;
+  line-height: 1.75;
+  font-size: 18px;
+  padding: 10px 0px;
   margin: 0;
 }
