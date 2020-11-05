@@ -41,7 +41,7 @@ class EncounterMap extends Component {
     return (
       <Map className="encounters-map" 
         center={[43.690176657397124, -79.44325284285641]}
-        zoom={9} 
+        zoom={10} 
         zoomControl={false} 
         attributionControl={false}>
           <TileLayer url='https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png' />
