@@ -30,7 +30,7 @@ class EncounterMap extends Component {
   render() {
     const p = this.props;
     const storyMarkers = this.storyMarkerData().map((d, i) =>
-      <CircleMarker key={i} center={[d.latitude[0], d.longitude[0]]} radius={4} color={'black'} fillOpacity={0.6} stroke={false}>
+      <CircleMarker key={i} center={[d.latitude[0], d.longitude[0]]} radius={8} color={'darkblue'} fillOpacity={0.6} stroke={false}>
         <Popup>
           <p className='epigraph'>{d.epigraph}</p>
         </Popup>
