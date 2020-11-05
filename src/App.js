@@ -9,6 +9,7 @@ import './App.css';
 import Intro from './Intro.js';
 import EncountersList from './EncountersList.js';
 import Story from './Story.js';
+import EncounterMap from './EncounterMap.js';
 
 class App extends Component {
 
@@ -28,8 +29,11 @@ class App extends Component {
             <Route path="/story/:id">
               <Story />
             </Route>
-            <Route path="/">
+            <Route path="/encounters">
               <EncountersList />
+            </Route>
+            <Route path="/">
+              <EncounterMap />
             </Route>
           </Switch>
         </div>

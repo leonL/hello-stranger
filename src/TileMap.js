@@ -9,7 +9,7 @@ class TileMap extends Component {
 
     return (
       <Map className="map" 
-        center={coords} // Toronto's centre roughly speaking
+        center={coords}
         zoom={17} 
         zoomControl={false} 
         touchZoom={false}
