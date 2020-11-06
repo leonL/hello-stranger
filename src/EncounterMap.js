@@ -31,7 +31,7 @@ class EncounterMap extends Component {
     const p = this.props;
     const storyMarkers = this.storyMarkerData().map((d, i) =>
       <CircleMarker key={i} center={[d.latitude[0], d.longitude[0]]} 
-        radius={10} fillColor={'#B4D100'} fillOpacity={0.2} 
+        radius={10} fillColor={'white'} fillOpacity={0.2} 
         stroke={true} weight={2} color={'darkblue'}>
         <Popup>
           <blockquote className='encounter-text'>
@@ -44,7 +44,7 @@ class EncounterMap extends Component {
 
     return (
       <Map className="encounters-map" 
-        center={[43.610176657397124, -79.46125284285641]}
+        center={[43.650176657397124, -79.46125284285641]}
         zoom={10} 
         zoomControl={false} 
         attributionControl={false}>
