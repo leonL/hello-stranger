@@ -31,10 +31,10 @@ class EncounterMap extends Component {
     const p = this.props;
     const storyMarkers = this.storyMarkerData().map((d, i) =>
       <CircleMarker key={i} center={[d.latitude[0], d.longitude[0]]} 
-        radius={10} fillColor={'white'} fillOpacity={0.2} 
-        stroke={true} weight={2} color={'black'}>
+        radius={3} fillColor={'black'} fillOpacity={1} 
+        stroke={true} weight={15} color={'white'} opacity={0}>
         <Popup>
-          <blockquote className='encounter-text'>
+          <blockquote className='encounter-paraphrase'>
             <p className='epigraph'>{d.epigraph}</p>
           </blockquote>
         </Popup>
@@ -52,7 +52,7 @@ class EncounterMap extends Component {
             {storyMarkers}
         </Map>
         <div className='legend'>
-          <h5 className='explainer'>Encounters are shared by readers like your; each of these inspired a story by a local writer.</h5>
+          <h5 className='explainer'>Encounters are shared by readers like you; these inspired fiction by local writers.</h5>
         </div>
       </div>
     );

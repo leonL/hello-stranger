@@ -6,6 +6,11 @@
   height: 100%;
 }
 
+.map .encounter-paraphrase {
+  padding: 0;
+  margin: 12px 20px;
+}
+
 .encounters .map .epigraph {
   font-family: "Fira Sans",sans-serif;
   line-height: 19px;
@@ -25,5 +30,7 @@
 .legend .explainer {
   margin: 0;
   padding: 10px;
+  font-weight: normal;
+  font-size: 17px;
 }
 
