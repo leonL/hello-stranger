@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Map, TileLayer, CircleMarker, Popup } from 'react-leaflet';
+import { Map, TileLayer, CircleMarker, Popup, SVGOverlay } from 'react-leaflet';
 import './EncounterMap.css';
 
 import Airtable from 'airtable';
@@ -41,16 +41,20 @@ class EncounterMap extends Component {
       </CircleMarker>
     );
 
-
     return (
-      <Map className="encounters-map" 
-        center={[43.680176657397124, -79.49125284285641]}
-        zoom={10} 
-        zoomControl={false} 
-        attributionControl={false}>
-          <TileLayer url='https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png' />
-          {storyMarkers}
-      </Map>
+      <div className='encounters'>
+        <Map className='map' 
+          center={[43.700176657397124, -79.49125284285641]}
+          zoom={10} 
+          zoomControl={false} 
+          attributionControl={false}>
+            <TileLayer url='https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png' />
+            {storyMarkers}
+        </Map>
+        <div className='legend'>
+          <h5 className='explainer'>Encounters are shared by readers like your; each of these inspired a story by a local writer.</h5>
+        </div>
+      </div>
     );
   }
 }

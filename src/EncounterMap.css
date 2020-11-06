@@ -1,14 +1,29 @@
-.hello-stranger .encounters-map {
+.hello-stranger .encounters {
   height: 100%;
 }
 
-.encounters-map .epigraph {
+.encounters .map {
+  height: 100%;
+}
+
+.encounters .map .epigraph {
   font-family: "Fira Sans",sans-serif;
   line-height: 19px;
   font-size: 14px;
-  /* font-family: 'Libre Caslon Text', 'Times New Roman', Times, serif;
-  line-height: 1.75;
-  font-size: 18px;
-  padding: 10px 0px;
-  margin: 0; */
 }
+
+.encounters .legend {
+  position: fixed;
+  z-index: 500;
+  bottom: 10px;
+  right: 10px;
+  width: 70%;
+  background-color: rgba(244, 244, 244, 0.9);
+  border-radius: 2px;
+}
+
+.legend .explainer {
+  margin: 0;
+  padding: 10px;
+}
+
