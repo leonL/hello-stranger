@@ -44,7 +44,7 @@ class EncounterMap extends Component {
 
     return (
       <Map className="encounters-map" 
-        center={[43.650176657397124, -79.46125284285641]}
+        center={[43.680176657397124, -79.49125284285641]}
         zoom={10} 
         zoomControl={false} 
         attributionControl={false}>
