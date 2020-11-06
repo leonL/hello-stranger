@@ -30,7 +30,9 @@ class EncounterMap extends Component {
   render() {
     const p = this.props;
     const storyMarkers = this.storyMarkerData().map((d, i) =>
-      <CircleMarker key={i} center={[d.latitude[0], d.longitude[0]]} radius={8} color={'darkblue'} fillOpacity={0.6} stroke={false}>
+      <CircleMarker key={i} center={[d.latitude[0], d.longitude[0]]} 
+        radius={10} fillColor={'#B4D100'} fillOpacity={0.2} 
+        stroke={true} weight={2} color={'darkblue'}>
         <Popup>
           <blockquote className='encounter-text'>
             <p className='epigraph'>{d.epigraph}</p>
@@ -42,11 +44,11 @@ class EncounterMap extends Component {
 
     return (
       <Map className="encounters-map" 
-        center={[43.690176657397124, -79.44325284285641]}
+        center={[43.610176657397124, -79.46125284285641]}
         zoom={10} 
         zoomControl={false} 
         attributionControl={false}>
-          <TileLayer url='https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png' />
+          <TileLayer url='https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png' />
           {storyMarkers}
       </Map>
     );
