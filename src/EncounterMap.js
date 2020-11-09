@@ -44,16 +44,16 @@ class EncounterMap extends Component {
     return (
       <div className='encounters'>
         <Map className='map' 
-          center={[43.700176657397124, -79.49125284285641]}
+          center={[43.650176657397124, -79.46025284285641]}
           zoom={10} 
           zoomControl={false} 
           attributionControl={false}>
             <TileLayer url='https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png' />
             {storyMarkers}
         </Map>
-        <div className='legend'>
+        {/* <div className='legend'>
           <h5 className='explainer'>Encounters are shared by readers like you; these inspired fiction by local writers.</h5>
-        </div>
+        </div> */}
       </div>
     );
   }
