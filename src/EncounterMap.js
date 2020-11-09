@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import { Map, TileLayer, CircleMarker, Popup, SVGOverlay } from 'react-leaflet';
 import './EncounterMap.css';
 
@@ -34,8 +35,10 @@ class EncounterMap extends Component {
         radius={3} fillColor={'black'} fillOpacity={1} 
         stroke={true} weight={15} color={'white'} opacity={0}>
         <Popup>
-          <h3>Encounter #{d.encounter_NAME}</h3>
+          <h5>Stranger {d.encounter_NAME}</h5>
           <p className='epigraph'>{d.epigraph}</p>
+          {/* <p>- A memory shared with helloStranger on {d.encounter_created_at}</p> */}
+          <p>Read <Link to={`/story/${d.NAME}`}>{d.title}</Link>, a story inspired by stranger {d.encounter_NAME}</p>
         </Popup>
       </CircleMarker>
     );
@@ -50,9 +53,11 @@ class EncounterMap extends Component {
             <TileLayer url='https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png' />
             {storyMarkers}
         </Map>
-        {/* <div className='legend'>
-          <h5 className='explainer'>Encounters are shared by readers like you; these inspired fiction by local writers.</h5>
-        </div> */}
+
+        <div className='legend'>
+          <p className='explainer'>*Strangers are recalled to us by readers like you.</p>
+          <p>If you like this project please take a moment to <a href='https://airtable.com/shrhBkljBMeLUa4wR' target='blank'>remember a stranger</a>.</p>
+        </div>
       </div>
     );
   }

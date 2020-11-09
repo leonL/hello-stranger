@@ -25,12 +25,13 @@
   width: 70%;
   background-color: rgba(244, 244, 244, 0.9);
   border-radius: 2px;
-}
-
-.legend .explainer {
   margin: 0;
   padding: 10px;
+}
+
+.legend p {
+  margin: 5px 0 5px;
   font-weight: normal;
-  font-size: 17px;
+  font-size: 13px;
 }
 
