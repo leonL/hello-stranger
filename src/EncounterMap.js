@@ -34,9 +34,8 @@ class EncounterMap extends Component {
         radius={3} fillColor={'black'} fillOpacity={1} 
         stroke={true} weight={15} color={'white'} opacity={0}>
         <Popup>
-          <blockquote className='encounter-paraphrase'>
-            <p className='epigraph'>{d.epigraph}</p>
-          </blockquote>
+          <h3>Encounter #{d.encounter_NAME}</h3>
+          <p className='epigraph'>{d.epigraph}</p>
         </Popup>
       </CircleMarker>
     );
@@ -44,7 +43,7 @@ class EncounterMap extends Component {
     return (
       <div className='encounters'>
         <Map className='map' 
-          center={[43.650176657397124, -79.46025284285641]}
+          center={[43.650176657397124, -79.44025284285641]}
           zoom={10} 
           zoomControl={false} 
           attributionControl={false}>
