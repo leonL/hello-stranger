@@ -37,7 +37,9 @@ class EncounterMap extends Component {
         <Popup>
           <p className='epigraph'>{d.epigraph}</p>
           {/* <p>- A memory shared with helloStranger on {d.encounter_created_at}</p> */}
-          <p className='read'><Link to={`/story/${d.NAME}`}>{d.title}</Link></p>
+          <p className='read'>Read <Link to={`/story/${d.NAME}`}>{d.title}</Link>, a fiction <span className='ital'>after</span> this encounter, by Leon Lukashevsky</p>
+          {/* <p className='read after'>a story after a stranger</p>
+          <p className='read after'>by Leon Lukashevsky</p> */}
         </Popup>
       </CircleMarker>
     );

@@ -13,13 +13,31 @@
 
 .encounters .map .epigraph {
   font-family: "Fira Sans",sans-serif;
+  /* font-weight: bold; */
   line-height: 19px;
-  font-size: 14px;
+  font-size: 16px;
+  /* background-color: #00B4D1; */
+  /* padding: 10px; */
+  /* color: white; */
+  /* border-radius: 5px; */
 }
 
 .map .read {
-  font-size: 18px;
-  text-align: center;
+  margin: 0;
+  font-size: 17px;
+  /* background-color: #00B4D1; */
+  /* color: white; */
+  /* text-align: center; */
+}
+
+.ital {
+  font-style: italic;
+}
+
+.map .read.after {
+  background-color: #00B4D1;
+  color: white;
+  font-size: 15px;
 }
 
 .encounters .legend {
