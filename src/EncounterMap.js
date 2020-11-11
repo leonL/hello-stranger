@@ -35,10 +35,9 @@ class EncounterMap extends Component {
         radius={3} fillColor={'black'} fillOpacity={1} 
         stroke={true} weight={15} color={'white'} opacity={0}>
         <Popup>
-          <h5>Stranger {d.encounter_NAME}</h5>
           <p className='epigraph'>{d.epigraph}</p>
           {/* <p>- A memory shared with helloStranger on {d.encounter_created_at}</p> */}
-          <p>Read <Link to={`/story/${d.NAME}`}>{d.title}</Link>, a story inspired by stranger {d.encounter_NAME}</p>
+          <p className='read'><Link to={`/story/${d.NAME}`}>{d.title}</Link></p>
         </Popup>
       </CircleMarker>
     );
@@ -55,8 +54,8 @@ class EncounterMap extends Component {
         </Map>
 
         <div className='legend'>
-          <p className='explainer'>*Strangers are recalled to us by readers like you.</p>
-          <p>If you like this project please take a moment to <a href='https://airtable.com/shrhBkljBMeLUa4wR' target='blank'>remember a stranger</a>.</p>
+          <p><span className='spot'>&#8226;</span> Memorable Strangers</p>
+          {/* <p className='caveat'>Please take a moment to <a href='https://airtable.com/shrhBkljBMeLUa4wR' target='blank'>remember a stranger</a>.</p> */}
         </div>
       </div>
     );
