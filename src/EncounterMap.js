@@ -53,7 +53,7 @@ class EncounterMap extends Component {
         </Map>
 
         <div className='legend'>
-          <p><span className='spot'>&#8226;</span> Strangers</p>
+          {/* <p><span className='spot'>&#8226;</span> Strangers</p> */}
           {/* <p className='caveat'>Please take a moment to <a href='https://airtable.com/shrhBkljBMeLUa4wR' target='blank'>remember a stranger</a>.</p> */}
         </div>
       </div>
