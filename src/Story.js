@@ -53,7 +53,7 @@ class Story extends Component {
           <img src={infinitySvg} alt='small infinity icon marking the end of the story'></img>
         </div>
         <p className='disclaimer'>
-          helloStranger crowdsources memories of encounters betweeen strangers. Local authors are then asked to write
+          helloStranger crowdsources memories of encounters betweeen strangers. And then asks local authors to write
           fiction inspired by what you submit. Please take a moment 
           to <a href='https://airtable.com/shrhBkljBMeLUa4wR' target='blank'>remember a stranger</a>.  
           {/* Descriptions of strangers are shared</a> with 
