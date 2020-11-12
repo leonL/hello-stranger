@@ -6,6 +6,11 @@
   height: 100%;
 }
 
+.map .stranger-popup .leaflet-popup-content {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .map .encounter-paraphrase {
   padding: 0;
   margin: 12px 20px;
@@ -13,54 +18,50 @@
 
 .encounters .map .epigraph {
   font-family: "Fira Sans",sans-serif;
-  /* font-weight: bold; */
-  line-height: 19px;
+  line-height: 1.5em;
+  font-size: 14px;
+  text-align: initial;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+.map .hello {
   font-size: 16px;
-  /* background-color: #00B4D1; */
-  /* padding: 10px; */
-  /* color: white; */
-  /* border-radius: 5px; */
-}
-
-.map .read {
-  margin: 0;
-  font-size: 17px;
-  /* background-color: #00B4D1; */
-  /* color: white; */
-  /* text-align: center; */
-}
-
-.ital {
-  font-style: italic;
-}
-
-.map .read.after {
+  padding: 7px;
+  border-radius: 5px;
   background-color: #00B4D1;
   color: white;
-  font-size: 15px;
+  text-decoration: none;
+  font-weight: 700;
+  text-shadow: 0.5px 0.5px 1px rgba(20, 20, 20, 0.5);
+  box-shadow: 2px 2px 0.5px rgba(0,0,0,0.1);
+}
+
+.hello .ital {
+  font-style: italic;
 }
 
 .encounters .legend {
   position: fixed;
   z-index: 500;
-  bottom: 0px;
-  left: -65px;
-  width: 70%;
+  bottom: 10px;
+  right: 10px;
   background-color: rgba(244, 244, 244, 0);
-  border-radius: 2px;
+  border: 0.5px dashed rgba(20, 20, 20, 0.2);
+  border-radius: 5px;
   margin: 0;
-  padding: 10px;
-  text-align: right;
+  padding: 0px 10px 5px 5px;
+  text-align: left;
 }
 
 .legend p {
   margin: 0;
   font-weight: normal;
-  font-size: 18px;
+  font-size: 20px;
   vertical-align: super;
 }
 
 .legend .spot {
-  font-size: 25px;
+  font-size: 26px;
 }
 
