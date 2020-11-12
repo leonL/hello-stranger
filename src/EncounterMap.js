@@ -44,7 +44,7 @@ class EncounterMap extends Component {
     return (
       <div className='encounters'>
         <Map className='map' 
-          center={[43.690176657397124, -79.37025284285641]}
+          center={[43.650176657397124, -79.37025284285641]}
           zoom={12} 
           zoomControl={false} 
           attributionControl={false}>
