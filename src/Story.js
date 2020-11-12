@@ -38,25 +38,30 @@ class Story extends Component {
     } else {
       let geo_coordinates = [story.latitude[0], story.longitude[0]];
       view = <div className='story'>
-        <VignetteMapLabels coordinates={geo_coordinates} />
+        {/* <VignetteMapLabels coordinates={geo_coordinates} /> */}
         <h1 className='title'>{story.title}</h1>
         <h5 className='by-line'>By Leon Lukashevsky</h5>
-        <blockquote className='overture'>
+        {/* <blockquote className='overture'>
           <p className='epigraph'>{story.epigraph}</p>
           <footer>
             ~ <cite>Encounter no. {story.encounter_NAME}</cite> 
           </footer>
-        </blockquote>
-        <p className='disclaimer'>
-          <span className='italics'>Encounters</span> are <a href='https://airtable.com/shrhBkljBMeLUa4wR' target='blank'>shared</a> with 
-          helloStranger by readers like you. The stories they inspire are works of imagination. 
-          Any resemblance between the characters that appear in them and any persons, living or dead, is a miracle.
-        </p>
+        </blockquote> */}
+        
         <div className="narrative" dangerouslySetInnerHTML={this.narrativeHtml(story.narrative)} />
         <div className='fin'>
           <img src={infinitySvg} alt='small infinity icon marking the end of the story'></img>
         </div>
-        <div className='afterword'>
+        <p className='disclaimer'>
+          helloStranger crowdsources memories of encounters betweeen strangers. Local authors are then asked to write
+          fiction inspired by what you submit. Please take a moment 
+          to <a href='https://airtable.com/shrhBkljBMeLUa4wR' target='blank'>remember a stranger</a>.  
+          {/* Descriptions of strangers are shared</a> with 
+          helloStranger by readers like you. The stories they inspire are works of imagination. 
+          Any resemblance between the characters that appear in them and any persons, living or dead, is a miracle. */}
+        </p>
+
+        {/* <div className='afterword'>
           <blockquote>
             <p className='munro'>
               A story is not like a road to follow … it's more like a house. You go inside and stay there for a while, 
@@ -69,7 +74,7 @@ class Story extends Component {
             </p>
             - <cite>Alice Munro</cite>
           </blockquote>
-        </div>
+        </div> */}
       </div>
     }
 

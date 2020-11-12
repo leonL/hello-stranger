@@ -4,19 +4,18 @@
 
 .story .title {
   font-family: 'Fira Sans', sans-serif;
-  margin: 5px 12px;
+  margin: 40px 0 0;
   font-weight: 500;
   color: black;
-  position: absolute;
-  top: 180px;
-  z-index: 600;
   font-size: 40px;
+  text-align: center;
 }
 
 .story .by-line {
   font-family: 'Fira Sans', sans-serif;
-  margin: 5px 12px 0;
+  margin: 0;
   font-weight: normal;
+  text-align: center;
 }
 
 .story .italics {
