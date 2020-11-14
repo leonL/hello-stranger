@@ -10,7 +10,9 @@ class EncounterMap extends Component {
   constructor(props) {
     super();
     this.state = {
-      stories: []
+      stories: [],
+      zoom: 3,
+      centre: [44.650176657397124, -79.37025284285641]
     };
   }
 
@@ -19,6 +21,13 @@ class EncounterMap extends Component {
       if (err) { console.error(err); return;  } 
       this.setState({stories: records});
     });
+
+    let t = this;
+    setTimeout(function() {  
+      let firstMarker = t.storyMarkerData()[0];
+      let firstMarkerCoords = [firstMarker.latitude[0], firstMarker.longitude[0]]
+      t.setState({ zoom: 10, centre: [43.650176657397124, -79.37025284285641] })
+    }, 5000);
   }
 
   storyMarkerData = () => {
@@ -30,9 +39,10 @@ class EncounterMap extends Component {
 
   render() {
     const p = this.props;
+    const s = this.state;
     const storyMarkers = this.storyMarkerData().map((d, i) =>
       <CircleMarker key={i} center={[d.latitude[0], d.longitude[0]]} 
-        radius={3} fillColor={'black'} fillOpacity={1} 
+        radius={0} fillColor={'black'} fillOpacity={0} 
         stroke={true} weight={15} color={'white'} opacity={0}>
         <Popup className='stranger-popup'>
           <p className='epigraph'>{d.epigraph}</p>
@@ -44,9 +54,11 @@ class EncounterMap extends Component {
     return (
       <div className='encounters'>
         <Map className='map' 
-          center={[43.650176657397124, -79.37025284285641]}
-          zoom={12} 
+          center={s.centre}
+          zoom={s.zoom} 
           zoomControl={false} 
+          anitmate={true}
+          useFlyTo={true}
           attributionControl={false}>
             <TileLayer url='https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png' />
             {storyMarkers}
