@@ -12,7 +12,7 @@ class EncounterMap extends Component {
     this.state = {
       stories: [],
       zoom: 2,
-      centre: [0, 0]
+      centre: [33.7620753, -84.3680670]
     };
   }
 
@@ -24,10 +24,10 @@ class EncounterMap extends Component {
 
     let t = this;
     setTimeout(function() {  
-      let firstMarker = t.storyMarkerData()[0];
-      let firstMarkerCoords = [firstMarker.latitude[0], firstMarker.longitude[0]]
-      t.setState({ zoom: 10, centre: [43.650176657397124, -79.37025284285641] })
-    }, 5000);
+      // let firstMarker = t.storyMarkerData()[0];
+      // let firstMarkerCoords = [firstMarker.latitude[0], firstMarker.longitude[0]]
+      t.setState({ zoom: 10, centre: [43.690176657397124, -79.46025284285641] })
+    }, 0);
   }
 
   storyMarkerData = () => {
@@ -58,7 +58,8 @@ class EncounterMap extends Component {
           zoom={s.zoom} 
           zoomControl={false} 
           anitmate={true}
-          duration={15}
+          duration={3}
+          // easeLinearity={0}
           useFlyTo={true}
           attributionControl={false}>
             <TileLayer url='https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png' />
