@@ -11,8 +11,8 @@ class EncounterMap extends Component {
     super();
     this.state = {
       stories: [],
-      zoom: 3,
-      centre: [44.650176657397124, -79.37025284285641]
+      zoom: 2,
+      centre: [0, 0]
     };
   }
 
@@ -58,6 +58,7 @@ class EncounterMap extends Component {
           zoom={s.zoom} 
           zoomControl={false} 
           anitmate={true}
+          duration={15}
           useFlyTo={true}
           attributionControl={false}>
             <TileLayer url='https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png' />
