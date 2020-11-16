@@ -85,7 +85,7 @@ class EncounterMap extends Component {
       })
       console.log('here');    
       t.nextTourMarker();
-    }, 10000);
+    }, 15000);
   }
 
   storyMarkerData = () => {
