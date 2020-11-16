@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Intro.css';
-import torontoIllustratedPng from './toSkyLine.png';
 import { Link } from "react-router-dom";
 
 class Intro extends Component {
