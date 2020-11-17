@@ -29,7 +29,7 @@ class EncounterMap extends Component {
       this.setState({stories: records});
     });
 
-    this.setState({ zoom: 10, centre: [43.690176657397124, -79.46025284285641] });
+    this.setState({ zoom: 10, centre: [43.630176657397124, -79.46025284285641] });
   }
 
   componentDidUpdate(prevPros, prevState) {
