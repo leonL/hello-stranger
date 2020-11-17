@@ -54,11 +54,11 @@ class Story extends Component {
         </div>
         <p className='disclaimer'>
           helloStranger crowdsources memories of encounters betweeen strangers. <br /><br />
-          Local authors read your submissions and write fiction inspired by the ones that compel them. <br /><br />
+          Local authors read your submissions and write fiction inspired by the ones that allure them. <br /><br />
           Please take a moment 
           to <a href='https://airtable.com/shrhBkljBMeLUa4wR' target='blank'>remember a stranger</a>.  
           {/* Descriptions of strangers are shared</a> with 
-          helloStranger by readers like you. The stories they inspire are works of imagination. 
+          helloStranger by readers like you. The stories they inspire are works of imagination.
           Any resemblance between the characters that appear in them and any persons, living or dead, is a miracle. */}
         </p>
 
