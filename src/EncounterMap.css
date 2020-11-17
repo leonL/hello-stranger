@@ -25,19 +25,20 @@
   margin-bottom: 12px;
 }
 
-.map .hello {
+.map .say-hello {
   font-size: 16px;
   padding: 7px;
   border-radius: 5px;
+  color: black;
   background-color: #00B4D1;
-  color: white;
   text-decoration: none;
-  font-weight: 700;
-  text-shadow: 0.5px 0.5px 1px rgba(20, 20, 20, 0.5);
   box-shadow: 2px 2px 0.5px rgba(0,0,0,0.1);
 }
 
-.hello .ital {
+.say-hello .hello {
+  font-weight: 700;
+  text-shadow: 0.5px 0.5px 1px rgba(20, 20, 20, 0.5);
+  color: white;
   font-style: italic;
 }
 

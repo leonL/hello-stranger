@@ -15,7 +15,7 @@ class EncounterMap extends Component {
       stories: [],
       zoom: 2,
       centre: [33.7620753, -84.3680670],
-      showMarkers: false,
+      showMarkers: true,
       currentTourMarkerIndex: false,
       mapFlightDuration: 3,
       flyTo: true,
@@ -33,16 +33,16 @@ class EncounterMap extends Component {
   }
 
   componentDidUpdate(prevPros, prevState) {
-    if (!prevState.showMarkers && this.state.showMarkers) {
-      this.startMarkerTour();
-    }
+    // if (!prevState.showMarkers && this.state.showMarkers) {
+    //   this.startMarkerTour();
+    // }
 
-    if (this.state.tour) {
-      let t = this;
-      setTimeout(function() {
-        t.myRef.current.leafletElement.openPopup();
-      }, 2000);
-    }
+    // if (this.state.tour) {
+    //   let t = this;
+    //   setTimeout(function() {
+    //     t.myRef.current.leafletElement.openPopup();
+    //   }, 2000);
+    // }
   }
 
   startMarkerTour = () => {
@@ -105,25 +105,20 @@ class EncounterMap extends Component {
     const p = this.props;
     const s = this.state;
     const storyMarkers = this.storyMarkerData().map((d, i) => {
-      let marker;
-      if (s.currentTourMarkerIndex === i) {
-        marker = <Marker key={i} ref={this.myRef} position={[d.latitude[0], d.longitude[0]]} icon={strangerMarker}>
-          <Popup className='stranger-popup'>
-            <p className='epigraph'>{d.epigraph}</p>
-            <Link className='hello' to={`/story/${d.NAME}`}><span className='ital'>hello</span></Link>
-          </Popup>
-        </Marker>
-      } else {
-        marker = <CircleMarker key={i} center={[d.latitude[0], d.longitude[0]]} 
-          radius={3} fillColor={'black'} fillOpacity={1} 
-          stroke={true} weight={15} color={'white'} opacity={0}>
-          <Popup className='stranger-popup'>
-            <p className='epigraph'>{d.epigraph}</p>
-            <Link className='hello' to={`/story/${d.NAME}`}><span className='ital'>hello</span></Link>
-          </Popup>
-        </CircleMarker>
-      }
-      return marker;
+      return <Marker key={i} ref={this.myRef} position={[d.latitude[0], d.longitude[0]]} icon={strangerMarker}>
+        <Popup className='stranger-popup'>
+          <p className='epigraph'>{d.epigraph}</p>
+          <Link className='say-hello' to={`/story/${d.NAME}`}>say <span className='hello'>hello</span></Link>
+        </Popup>
+      </Marker>
+      // <CircleMarker key={i} center={[d.latitude[0], d.longitude[0]]} 
+      //   radius={3} fillColor={'black'} fillOpacity={1} 
+      //   stroke={true} weight={15} color={'white'} opacity={0}>
+      //   <Popup className='stranger-popup'>
+      //     <p className='epigraph'>{d.epigraph}</p>
+      //     <Link className='hello' to={`/story/${d.NAME}`}><span className='ital'>hello</span></Link>
+      //   </Popup>
+      // </CircleMarker>
     });
 
     return (

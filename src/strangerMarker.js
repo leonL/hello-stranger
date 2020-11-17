@@ -3,11 +3,11 @@ import L from 'leaflet';
 const strangerMarker = new L.Icon({
     iconUrl: require('./strangerIcon.png'),
     // shadowUrl: null,
-    iconSize: [20, 20],
+    iconSize: [16, 16],
     // shadowSize: null,
-    iconAnchor: [0, 10],
+    iconAnchor: [8, 8],
     // shadowAnchor: null,
-    popupAnchor: [10, -10],
+    popupAnchor: [0, -10],
     className: 'stranger-marker'
 });
 
