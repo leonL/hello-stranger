@@ -48,19 +48,9 @@ class EncounterMap extends Component {
       return <Marker key={i} ref={this.myRef} position={[d.latitude[0], d.longitude[0]]} icon={strangerMarker}>
         <Popup className='stranger-popup' autoPanPadding={[15, 50]}>
           <p className='epigraph'>{d.epigraph}</p>
-          {/* <button><Link to={`/story/${d.NAME}`}><span class="wave">👋</span></Link></button> */}
-          {/* <Link className='say-hello' to={`/story/${d.NAME}`}>say <span className='hello'>hello</span></Link> */}
           <Link className='wave' to={`/story/${d.NAME}`}>👋🏾</Link>
         </Popup>
       </Marker>
-      // <CircleMarker key={i} center={[d.latitude[0], d.longitude[0]]} 
-      //   radius={3} fillColor={'black'} fillOpacity={1} 
-      //   stroke={true} weight={15} color={'white'} opacity={0}>
-      //   <Popup className='stranger-popup'>
-      //     <p className='epigraph'>{d.epigraph}</p>
-      //     <Link className='hello' to={`/story/${d.NAME}`}><span className='ital'>hello</span></Link>
-      //   </Popup>
-      // </CircleMarker>
     });
 
     return (
