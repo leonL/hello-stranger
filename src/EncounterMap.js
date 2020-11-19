@@ -111,7 +111,7 @@ class EncounterMap extends Component {
           <p className='epigraph'>{d.epigraph}</p>
           {/* <button><Link to={`/story/${d.NAME}`}><span class="wave">👋</span></Link></button> */}
           {/* <Link className='say-hello' to={`/story/${d.NAME}`}>say <span className='hello'>hello</span></Link> */}
-          <Link className='wave' to={`/story/${d.NAME}`}>👋</Link>
+          <Link className='wave' to={`/story/${d.NAME}`}>👋🏾</Link>
         </Popup>
       </Marker>
       // <CircleMarker key={i} center={[d.latitude[0], d.longitude[0]]} 
