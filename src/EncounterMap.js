@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Map, TileLayer, CircleMarker, Popup, Marker } from 'react-leaflet';
 import './EncounterMap.css';
 import strangerMarker from './strangerMarker.js';
-import wavingHandMarker from './wavingHandMarker.js';
 
 import Airtable from 'airtable';
 const helloStrangerBase = new Airtable({ apiKey: process.env.REACT_APP_AIRTABLE_READ_KEY }).base('appu19XYiAbXm9wJs');
