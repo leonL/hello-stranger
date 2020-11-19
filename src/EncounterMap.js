@@ -107,7 +107,7 @@ class EncounterMap extends Component {
     const s = this.state;
     const storyMarkers = this.storyMarkerData().map((d, i) => {
       return <Marker key={i} ref={this.myRef} position={[d.latitude[0], d.longitude[0]]} icon={strangerMarker}>
-        <Popup className='stranger-popup'>
+        <Popup className='stranger-popup' autoPanPadding={[15, 40]}>
           <p className='epigraph'>{d.epigraph}</p>
           {/* <button><Link to={`/story/${d.NAME}`}><span class="wave">👋</span></Link></button> */}
           {/* <Link className='say-hello' to={`/story/${d.NAME}`}>say <span className='hello'>hello</span></Link> */}

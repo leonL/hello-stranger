@@ -8,7 +8,7 @@
 
 .map .stranger-popup .leaflet-popup-content {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .map .encounter-paraphrase {
@@ -18,11 +18,11 @@
 
 .encounters .map .epigraph {
   font-family: "Fira Sans",sans-serif;
-  line-height: 1.5em;
+  line-height: 1.8em;
   font-size: 14px;
   text-align: initial;
-  font-weight: 400;
-  margin-bottom: 12px;
+  font-weight: 100;
+  margin: 30px 12px 20px;
 }
 
 .map .wave {
