@@ -15,7 +15,7 @@ class EncounterMap extends Component {
       stories: [],
       zoom: 2,
       centre: [33.7620753, -84.3680670],
-      showMarkers: true,
+      showMarkers: false,
       currentTourMarkerIndex: false,
       mapFlightDuration: 3,
       flyTo: true,
@@ -29,7 +29,7 @@ class EncounterMap extends Component {
       this.setState({stories: records});
     });
 
-    this.setState({ zoom: 10, centre: [43.630176657397124, -79.46025284285641] });
+    this.setState({ zoom: 10, centre: [43.630176657397124, -79.4025284285641] });
   }
 
   componentDidUpdate(prevPros, prevState) {
