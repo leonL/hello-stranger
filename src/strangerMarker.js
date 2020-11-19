@@ -5,9 +5,9 @@ const strangerMarker = new L.Icon({
     // shadowUrl: null,
     iconSize: [20, 20],
     // shadowSize: null,
-    iconAnchor: [8, 8],
+    iconAnchor: [10, 10],
     // shadowAnchor: null,
-    popupAnchor: [0, -10],
+    popupAnchor: [0, -15],
     className: 'stranger-marker'
 });
 
