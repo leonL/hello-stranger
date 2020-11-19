@@ -25,6 +25,11 @@
   margin-bottom: 12px;
 }
 
+.map .wave {
+  font-size: 32px;
+  text-decoration: none;
+}
+
 .map .say-hello {
   font-size: 16px;
   padding: 7px;
