@@ -15,11 +15,7 @@ class EncounterMap extends Component {
       stories: [],
       zoom: 2,
       centre: [33.7620753, -84.3680670],
-      showMarkers: false,
-      currentTourMarkerIndex: false,
-      mapFlightDuration: 3,
-      flyTo: true,
-      tour: false
+      showMarkers: false
     };
   }
 
@@ -30,62 +26,6 @@ class EncounterMap extends Component {
     });
 
     this.setState({ zoom: 10, centre: [43.630176657397124, -79.4025284285641] });
-  }
-
-  componentDidUpdate(prevPros, prevState) {
-    // if (!prevState.showMarkers && this.state.showMarkers) {
-    //   this.startMarkerTour();
-    // }
-
-    // if (this.state.tour) {
-    //   let t = this;
-    //   setTimeout(function() {
-    //     t.myRef.current.leafletElement.openPopup();
-    //   }, 2000);
-    // }
-  }
-
-  startMarkerTour = () => {
-    const firstMarker = this.storyMarkerData()[0];
-    
-    let t = this;
-    setTimeout(function() {
-      t.setState({
-        centre: [firstMarker.latitude[0], firstMarker.longitude[0]], 
-        zoom: 14,
-        currentTourMarkerIndex: 0,
-        mapFlightDuration: 0.1,
-        tour: true
-      });
-      t.nextTourMarker();
-    }, 2000);
-  }
-  
-  nextTourMarker = () => {
-    const s = this.state;
-    const allStoryMarkers = this.storyMarkerData();    
-    let nextMarkerIndex;
-
-    if (s.currentTourMarkerIndex === allStoryMarkers.length - 1) {
-      nextMarkerIndex = 0;
-    } else {
-      nextMarkerIndex = ++s.currentTourMarkerIndex;
-    }
-
-    let nextMarkerData = allStoryMarkers[nextMarkerIndex];
-    console.log(nextMarkerIndex);
-
-    let t = this;
-    setTimeout(function() { 
-      t.setState({
-        centre: [nextMarkerData.latitude[0], nextMarkerData.longitude[0]],
-        currentTourMarkerIndex: nextMarkerIndex,
-        mapFlightDuration: 1,
-        flyTo: true
-      })
-      console.log('here');    
-      t.nextTourMarker();
-    }, 15000);
   }
 
   storyMarkerData = () => {
@@ -132,7 +72,7 @@ class EncounterMap extends Component {
           duration={s.mapFlightDuration}
           easeLinearity={0}
           animate={true}
-          useFlyTo={s.flyTo}
+          useFlyTo={true}
           attributionControl={false}
           onZoomEnd={this.showMarkers}>
             <TileLayer url='https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png' />
