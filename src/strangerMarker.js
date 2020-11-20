@@ -1,13 +1,13 @@
 import L from 'leaflet';
 
 const strangerMarker = new L.Icon({
-    iconUrl: require('./blueStranger.png'),
+    iconUrl: require('./mapIcon.png'),
     // shadowUrl: null,
-    iconSize: [20, 20],
+    iconSize: [30, 30],
     // shadowSize: null,
-    iconAnchor: [10, 10],
+    iconAnchor: [15, 30],
     // shadowAnchor: null,
-    popupAnchor: [0, -15],
+    popupAnchor: [0, -35],
     className: 'stranger-marker'
 });
 
