@@ -1,7 +1,7 @@
 import L from 'leaflet';
 
 const strangerMarker = new L.Icon({
-    iconUrl: require('./map-marker.png'),
+    iconUrl: require('./map-marker2.png'),
     // shadowUrl: null,
     iconSize: [30, 30],
     // shadowSize: null,
