@@ -28,6 +28,15 @@ class EncounterMap extends Component {
     this.setState({ zoom: 10, centre: [43.630176657397124, -79.4025284285641] });
   }
 
+  componentDidUpdate(prevPros, prevState) {
+    if (!prevState.showMarkers && this.state.showMarkers) {
+      let t = this;
+      setTimeout(function() {
+        t.myRef.current.leafletElement.openPopup();
+      }, 2000);
+    }
+  }
+
   storyMarkerData = () => {
     let data = this.state.stories.map((story) => {
       return story.fields;
@@ -45,12 +54,23 @@ class EncounterMap extends Component {
     const p = this.props;
     const s = this.state;
     const storyMarkers = this.storyMarkerData().map((d, i) => {
-      return <Marker key={i} ref={this.myRef} position={[d.latitude[0], d.longitude[0]]} icon={strangerMarker}>
-        <Popup className='stranger-popup' autoPanPadding={[15, 50]}>
-          <p className='epigraph'>{d.epigraph}</p>
-          <Link className='say' to={`/story/${d.NAME}`}>say hello</Link>
-        </Popup>
-      </Marker>
+      let marker;
+      if (d.NAME == 5) {
+        marker = <Marker key={i} ref={this.myRef} position={[d.latitude[0], d.longitude[0]]} icon={strangerMarker}>
+          <Popup className='stranger-popup' autoPanPadding={[15, 50]}>
+            <p className='epigraph'>{d.epigraph}</p>
+            <Link className='say' to={`/story/${d.NAME}`}>say hello</Link>
+          </Popup>
+        </Marker>
+      } else {
+        marker = <Marker key={i} position={[d.latitude[0], d.longitude[0]]} icon={strangerMarker}>
+          <Popup className='stranger-popup' autoPanPadding={[15, 50]}>
+            <p className='epigraph'>{d.epigraph}</p>
+            <Link className='say' to={`/story/${d.NAME}`}>say hello</Link>
+          </Popup>
+        </Marker>        
+      }
+      return marker;
     });
 
     return (
