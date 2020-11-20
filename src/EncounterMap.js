@@ -48,7 +48,7 @@ class EncounterMap extends Component {
       return <Marker key={i} ref={this.myRef} position={[d.latitude[0], d.longitude[0]]} icon={strangerMarker}>
         <Popup className='stranger-popup' autoPanPadding={[15, 50]}>
           <p className='epigraph'>{d.epigraph}</p>
-          <Link className='wave' to={`/story/${d.NAME}`}>👋🏾</Link>
+          <Link className='say' to={`/story/${d.NAME}`}>say hello</Link>
         </Popup>
       </Marker>
     });
