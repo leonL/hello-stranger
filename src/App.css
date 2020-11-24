@@ -20,18 +20,19 @@ html, body, #root, body {
 
 .header #hello {
   margin: 0;
-  background-color: #00B4D1;
+  background-color: #FF0000;
   color: white;
 }
 
 .header #stranger {
   margin: 0;
-  font-weight: NORMAL;
+  font-weight: bold;
+  color: #1E488E;
   font-family: 'Rock Salt', sans-serif;
   position: absolute;
-  top: 8px;
+  top: 14px;
   width: 100%;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .hello-stranger .front-cover {

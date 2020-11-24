@@ -48,11 +48,23 @@
 100% { transform: rotate( 0.0deg) }
 }
 
-.map .say {
+.map .choice {
   font-size: 18px;
 }
 
-.map .say-hello {
+.choice a {
+  margin: 0 20px;
+}
+
+.choice .howdy {
+  color: #FF0000;
+}
+
+.choice .pass {
+  color: #1E488E;
+}
+
+/* .map .say-hello {
   font-size: 16px;
   padding: 7px;
   border-radius: 5px;
@@ -67,29 +79,6 @@
   text-shadow: 0.5px 0.5px 1px rgba(20, 20, 20, 0.5);
   color: white;
   font-style: italic;
-}
+} */
 
-.encounters .legend {
-  position: fixed;
-  z-index: 500;
-  bottom: 10px;
-  right: 10px;
-  background-color: rgba(244, 244, 244, 0);
-  border: 0.5px dashed rgba(20, 20, 20, 0.2);
-  border-radius: 5px;
-  margin: 0;
-  padding: 0px 10px 5px 5px;
-  text-align: left;
-}
-
-.legend p {
-  margin: 0;
-  font-weight: normal;
-  font-size: 20px;
-  vertical-align: super;
-}
-
-.legend .spot {
-  font-size: 26px;
-}
 

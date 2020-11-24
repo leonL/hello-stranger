@@ -25,7 +25,7 @@ class EncounterMap extends Component {
       this.setState({stories: records});
     });
 
-    this.setState({ zoom: 10, centre: [43.630176657397124, -79.4025284285641] });
+    this.setState({ zoom: 15, centre: [43.665575, -79.467843] });
   }
 
   componentDidUpdate(prevPros, prevState) {
@@ -59,14 +59,20 @@ class EncounterMap extends Component {
         marker = <Marker key={i} ref={this.myRef} position={[d.latitude[0], d.longitude[0]]} icon={strangerMarker}>
           <Popup className='stranger-popup' autoPanPadding={[15, 50]}>
             <p className='epigraph'>{d.epigraph}</p>
-            <Link className='say' to={`/story/${d.NAME}`}>say hello</Link>
+            <div className='choice'>
+              <Link className='howdy' to={`/story/${d.NAME}`}>say hello</Link>
+              <Link className='pass' to={`/story/${d.NAME}`}>move on</Link>
+            </div>
           </Popup>
         </Marker>
       } else {
         marker = <Marker key={i} position={[d.latitude[0], d.longitude[0]]} icon={strangerMarker}>
           <Popup className='stranger-popup' autoPanPadding={[15, 50]}>
             <p className='epigraph'>{d.epigraph}</p>
-            <Link className='say' to={`/story/${d.NAME}`}>say hello</Link>
+            <div className='choice'>
+              <Link className='howdy' to={`/story/${d.NAME}`}>say hello</Link>
+              <Link className='pass' to={`/story/${d.NAME}`}>move on</Link>
+            </div>
           </Popup>
         </Marker>        
       }
@@ -79,14 +85,14 @@ class EncounterMap extends Component {
           center={s.centre}
           zoom={s.zoom} 
           zoomControl={false} 
-          duration={s.mapFlightDuration}
+          duration={7}
           easeLinearity={0}
           animate={true}
           useFlyTo={true}
           attributionControl={false}
           onZoomEnd={this.showMarkers}>
-            <TileLayer url='https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png' />
-            {this.state.showMarkers && storyMarkers}
+            <TileLayer url='https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png' />
+            {storyMarkers}
         </Map>
       </div>
     );
