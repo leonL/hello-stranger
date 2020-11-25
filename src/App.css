@@ -26,7 +26,7 @@ html, body, #root, body {
 
 .header #stranger {
   margin: 0;
-  font-weight: bold;
+  font-weight: normal;
   color: #1E488E;
   font-family: 'Rock Salt', sans-serif;
   position: absolute;

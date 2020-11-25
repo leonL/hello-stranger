@@ -61,7 +61,7 @@ class EncounterMap extends Component {
             <p className='epigraph'>{d.epigraph}</p>
             <div className='choice'>
               <Link className='howdy' to={`/story/${d.NAME}`}>say hello</Link>
-              <Link className='pass' to={`/story/${d.NAME}`}>move on</Link>
+              <Link className='pass' to={`/story/${d.NAME}`}>next</Link>
             </div>
           </Popup>
         </Marker>
@@ -71,7 +71,7 @@ class EncounterMap extends Component {
             <p className='epigraph'>{d.epigraph}</p>
             <div className='choice'>
               <Link className='howdy' to={`/story/${d.NAME}`}>say hello</Link>
-              <Link className='pass' to={`/story/${d.NAME}`}>move on</Link>
+              <Link className='pass' to={`/story/${d.NAME}`}>next</Link>
             </div>
           </Popup>
         </Marker>        
