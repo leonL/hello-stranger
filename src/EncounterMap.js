@@ -36,9 +36,7 @@ class EncounterMap extends Component {
   componentDidUpdate(prevPros, prevState) {
     const s = this.state;
     if (this.isAnimating()) {
-      console.log('animating to index... ' + this.state.nextEncounterIndex);
-    } else if (!prevState.encounters && s.encounters.length) {
-      console.log('first animate');
+    } else if (prevState.encounters === undefined && s.encounters) {
       this.animateToNextEncounter(undefined, 7); 
     }
   }
