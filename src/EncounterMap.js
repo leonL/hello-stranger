@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import { Map, TileLayer, CircleMarker, Popup, Marker } from 'react-leaflet';
+import { Map, TileLayer, Popup, Marker } from 'react-leaflet';
 import './EncounterMap.css';
 import strangerMarker from './strangerMarker.js';
 
@@ -10,92 +10,115 @@ const helloStrangerBase = new Airtable({ apiKey: process.env.REACT_APP_AIRTABLE_
 class EncounterMap extends Component {
   constructor(props) {
     super();
-    this.myRef = React.createRef();
+    this.nextEncounterMarkerRef = React.createRef();
     this.state = {
-      stories: [],
-      zoom: 2,
-      centre: [33.7620753, -84.3680670],
-      showMarkers: false
+      encounters: undefined,
+      nextEncounterIndex: undefined,
+      zoomLevel: 2,
+      mapCentre: [33.7620753, -84.3680670], // the opening zoom animation beings with a wide shot of the map over Central America 
+      animationDuration: 7
     };
   }
 
   componentDidMount() {
-    helloStrangerBase('stories').select().firstPage((err, records) => {
-      if (err) { console.error(err); return;  } 
-      this.setState({stories: records});
-    });
+    helloStrangerBase('stories').select({sort: [{field: "published_on", direction: "asc"}]}).firstPage((err, records) => {
+      if (err) { console.error(err); return;  }
 
-    this.setState({ zoom: 15, centre: [43.665575, -79.467843] });
+      const encountersData = records.map((r) => {
+        let data = {...r.fields, id: r.id};
+        return data;
+      });
+
+      this.setState({ encounters: encountersData });
+    });
   }
 
   componentDidUpdate(prevPros, prevState) {
-    if (!prevState.showMarkers && this.state.showMarkers) {
-      let t = this;
-      setTimeout(function() {
-        t.myRef.current.leafletElement.openPopup();
-      }, 2000);
+    const s = this.state;
+    if (this.isAnimating()) {
+      console.log('animating to index... ' + this.state.nextEncounterIndex);
+    } else if (!prevState.encounters && s.encounters.length) {
+      console.log('first animate');
+      this.animateToNextEncounter(undefined, 7); 
     }
   }
 
-  storyMarkerData = () => {
-    let data = this.state.stories.map((story) => {
-      return story.fields;
-    });
-    return data;
+  animateToNextEncounter = (currentIndex, animationDuration = 2) => {
+    let nextIndex;
+    if (currentIndex === undefined || currentIndex+1 === this.state.encounters.length) {
+      nextIndex = 0;
+    } else {
+      nextIndex = currentIndex + 1;
+    }
+    this.setState({
+      nextEncounterIndex: nextIndex,
+      mapCentre: this.encounterCoords(nextIndex),
+      zoomLevel: 14,
+      animationDuration: animationDuration
+    })
   }
 
-  showMarkers = () => {
-    if (!this.state.showMarkers) {
-      this.setState({ showMarkers: true })
+  mapAttrs = () => {
+    const s = this.state;
+    let postZoomCallback = undefined; 
+
+    if (this.isAnimating()) {
+      postZoomCallback = this.showNextEncounterAnecdote;
+    } 
+
+    return {
+      zoom: s.zoomLevel,
+      center: s.mapCentre,
+      attributionControl: false,
+      zoomControl: false, 
+      animate: true,
+      useFlyTo: true,
+      duration: s.animationDuration,
+      easeLinearity: 10,
+      onZoomEnd: postZoomCallback
     }
+  };
+
+  showNextEncounterAnecdote = () => {
+    this.nextEncounterMarkerRef.current.leafletElement.openPopup();
+  }
+
+  markersHtml = () => {
+    const s = this.state;
+    return s.encounters.map((d, i) => {
+      return <Marker key={i} position={this.encounterCoords(i)} icon={strangerMarker} 
+        ref={i === s.nextEncounterIndex ?  this.nextEncounterMarkerRef : undefined}>
+        <Popup className='popup' autoPanPadding={[15, 50]}>
+          <p className='anecdote'>{d.anecdote}</p>
+          <div className='pills'>
+            <Link className='say-hello' to={`/story/${d.id}`}>say hello</Link>
+            <a className='next' href="#" onClick={() => this.animateToNextEncounter(i)}>next</a>
+          </div>
+        </Popup>
+      </Marker>
+    })
   }
 
   render() {
-    const p = this.props;
     const s = this.state;
-    const storyMarkers = this.storyMarkerData().map((d, i) => {
-      let marker;
-      if (d.NAME == 5) {
-        marker = <Marker key={i} ref={this.myRef} position={[d.latitude[0], d.longitude[0]]} icon={strangerMarker}>
-          <Popup className='stranger-popup' autoPanPadding={[15, 50]}>
-            <p className='epigraph'>{d.epigraph}</p>
-            <div className='choice'>
-              <Link className='howdy' to={`/story/${d.NAME}`}>say hello</Link>
-              <Link className='pass' to={`/story/${d.NAME}`}>next</Link>
-            </div>
-          </Popup>
-        </Marker>
-      } else {
-        marker = <Marker key={i} position={[d.latitude[0], d.longitude[0]]} icon={strangerMarker}>
-          <Popup className='stranger-popup' autoPanPadding={[15, 50]}>
-            <p className='epigraph'>{d.epigraph}</p>
-            <div className='choice'>
-              <Link className='howdy' to={`/story/${d.NAME}`}>say hello</Link>
-              <Link className='pass' to={`/story/${d.NAME}`}>next</Link>
-            </div>
-          </Popup>
-        </Marker>        
-      }
-      return marker;
-    });
-
     return (
       <div className='encounters'>
-        <Map className='map' 
-          center={s.centre}
-          zoom={s.zoom} 
-          zoomControl={false} 
-          duration={7}
-          easeLinearity={0}
-          animate={true}
-          useFlyTo={true}
-          attributionControl={false}
-          onZoomEnd={this.showMarkers}>
-            <TileLayer url='https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png' />
-            {storyMarkers}
+        <Map className='map' {...this.mapAttrs()}>
+          <TileLayer url='https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png' />
+          {s.encounters && this.markersHtml()}
         </Map>
       </div>
     );
+  }
+
+  encounterCoords = (index) => {
+    const s = this.state;
+    let encounter = s.encounters[index];
+    return [encounter.latitude[0], encounter.longitude[0]]
+  }
+
+  isAnimating = () => {
+    return this.state.nextEncounterIndex !== undefined;
   }
 }
 

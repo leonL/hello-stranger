@@ -18,10 +18,11 @@ class Story extends Component {
   }
 
   componentDidMount() {
-    let storyNAME = this.props.match.params.id;
-    helloStrangerBase('stories').select({filterByFormula: `{NAME} = ${storyNAME}`}).firstPage((err, record) => {
+    let storyId = this.props.match.params.id;
+    helloStrangerBase('stories').select().firstPage((err, records) => {
       if (err) { console.error(err); return;  }
-      this.setState({ story: record[0].fields });
+      let story = records.find(r => r.id == storyId)
+      this.setState({ story: story.fields });
     });
   }
 

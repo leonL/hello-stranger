@@ -6,79 +6,31 @@
   height: 100%;
 }
 
-.map .stranger-popup .leaflet-popup-content {
-  text-align: center;
+.map .popup .leaflet-popup-content {
   margin-bottom: 22px;
 }
 
-.map .encounter-paraphrase {
-  padding: 0;
-}
-
-.encounters .map .epigraph {
+.encounters .map .anecdote {
   font-family: "Fira Sans",sans-serif;
   line-height: 1.5em;
   font-size: 17px;
-  text-align: initial;
   font-weight: 100;
   margin: 30px 12px 10px;
 }
 
-.map .wave {
-  font-size: 32px;
-  text-decoration: none;
-}
-
-.map .wave {
-  animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
-  animation-duration: 2.5s;        /* Change to speed up or slow down */
-  animation-iteration-count: infinite;  /* Never stop waving :) */
-  transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
-  display: inline-block;
-}
-
-@keyframes wave-animation {
-  0% { transform: rotate( 0.0deg) }
- 10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
- 20% { transform: rotate(-8.0deg) }
- 30% { transform: rotate(14.0deg) }
- 40% { transform: rotate(-4.0deg) }
- 50% { transform: rotate(10.0deg) }
- 60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
-100% { transform: rotate( 0.0deg) }
-}
-
-.map .choice {
+.map .pills {
+  text-align: center;
   font-size: 18px;
 }
 
-.choice a {
+.pills a {
   margin: 0 20px;
 }
 
-.choice .howdy {
+.pills .say-hello {
   color: #FF0000;
 }
 
-.choice .pass {
+.pills .next {
   color: #1E488E;
 }
-
-/* .map .say-hello {
-  font-size: 16px;
-  padding: 7px;
-  border-radius: 5px;
-  color: black;
-  background-color: #00B4D1;
-  text-decoration: none;
-  box-shadow: 2px 2px 0.5px rgba(0,0,0,0.1);
-}
-
-.say-hello .hello {
-  font-weight: 700;
-  text-shadow: 0.5px 0.5px 1px rgba(20, 20, 20, 0.5);
-  color: white;
-  font-style: italic;
-} */
-
-
