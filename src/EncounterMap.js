@@ -15,7 +15,7 @@ class EncounterMap extends Component {
       encounters: undefined,
       nextEncounterIndex: undefined,
       zoomLevel: 2,
-      mapCentre: [33.7620753, -84.3680670], // the opening zoom animation beings with a wide shot of the map over Central America 
+      mapCentre: [33.7620753, -84.3680670], // Central America (not Kansas) 
       animationDuration: 7
     };
   }
@@ -89,8 +89,8 @@ class EncounterMap extends Component {
         <Popup className='popup' autoPanPadding={[15, 50]}>
           <p className='anecdote'>{d.anecdote}</p>
           <div className='pills'>
-            <Link className='say-hello' to={`/story/${d.id}`}>say hello</Link>
-            <a className='next' href="#" onClick={() => this.animateToNextEncounter(i)}>next</a>
+            <Link className='say-hello' to={`/story/${d.id}`}>hello</Link>
+            <a className='next' href="#" onClick={() => this.animateToNextEncounter(i)}>goodbye</a>
           </div>
         </Popup>
       </Marker>
