@@ -21,7 +21,10 @@ class EncounterMap extends Component {
   }
 
   componentDidMount() {
-    helloStrangerBase('stories').select({sort: [{field: "published_on", direction: "asc"}]}).firstPage((err, records) => {
+    helloStrangerBase('encounters').select({
+      sort: [{field: "story_publication_date", direction: "asc"}],
+      fields: ['vignette', 'latitude', 'longitude']
+    }).firstPage((err, records) => {
       if (err) { console.error(err); return;  }
 
       const encountersData = records.map((r) => {
@@ -61,7 +64,7 @@ class EncounterMap extends Component {
     let postZoomCallback = undefined; 
 
     if (this.isAnimating()) {
-      postZoomCallback = this.showNextEncounterAnecdote;
+      postZoomCallback = this.showNextEncounterVignette;
     } 
 
     return {
@@ -77,7 +80,7 @@ class EncounterMap extends Component {
     }
   };
 
-  showNextEncounterAnecdote = () => {
+  showNextEncounterVignette = () => {
     this.nextEncounterMarkerRef.current.leafletElement.openPopup();
   }
 
@@ -87,7 +90,7 @@ class EncounterMap extends Component {
       return <Marker key={i} position={this.encounterCoords(i)} icon={strangerMarker} 
         ref={i === s.nextEncounterIndex ?  this.nextEncounterMarkerRef : undefined}>
         <Popup className='popup' autoPanPadding={[15, 50]}>
-          <p className='anecdote'>{d.anecdote}</p>
+          <p className='vignette'>{d.vignette}</p>
           <div className='pills'>
             <Link className='say-hello' to={`/story/${d.id}`}>hello</Link>
             <a className='next' href="#" onClick={() => this.animateToNextEncounter(i)}>goodbye</a>
@@ -112,7 +115,7 @@ class EncounterMap extends Component {
   encounterCoords = (index) => {
     const s = this.state;
     let encounter = s.encounters[index];
-    return [encounter.latitude[0], encounter.longitude[0]]
+    return [encounter.latitude, encounter.longitude]
   }
 
   isAnimating = () => {
